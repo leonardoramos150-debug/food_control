@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Perdas - FoodControl 4.0</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <nav class="menu" aria-label="Menu principal">
+        <div class="marca">
+          <img src="../assets/img/logo.png" alt="FoodControl 4.0" />
+        </div>
+        <a href="dashboard.html">Dashboard</a
+        ><a href="produtos.html">Produtos</a><a href="lotes.html">Lotes</a
+        ><a href="producao.html">Produção</a><a href="estoque.html">Estoque</a
+        ><a href="pedidos.html">Pedidos</a
+        ><a href="perdas.html" class="ativo" aria-current="page">Perdas</a
+        ><a href="alertas.html">Alertas</a
+        ><a href="relatorios.html">Relatórios</a
+        ><a href="usuarios.html">Usuários</a>
+      </nav>
+      <main class="conteudo">
+        <header class="topo">
+          <div>
+            <h1>Perdas</h1>
+            <p>Registre os desperdícios e acompanhe o motivo</p>
+          </div>
+          <div class="usuario">
+            <div class="foto">MD</div>
+            <div>Marina Duarte<small>Administrador</small></div>
+            <a class="sair" href="../index.html">Sair</a>
+          </div>
+        </header>
+        <div class="grade g2">
+          <section class="bloco">
+            <h2>Registrar perda</h2>
+            <form class="formulario">
+              <div class="campo">
+                <label for="Produto">Produto</label
+                ><select id="Produto">
+                  <option>Lasanha Bolonhesa</option>
+                  <option>Pizza Calabresa</option>
+                  <option>Pastel de Carne</option>
+                </select>
+              </div>
+              <div class="campo">
+                <label for="Lote">Lote</label
+                ><select id="Lote">
+                  <option>LOT-2026-043</option>
+                  <option>LOT-2026-021</option>
+                  <option>Sem lote</option>
+                </select>
+              </div>
+              <div class="campo">
+                <label for="Quantidade">Quantidade</label
+                ><input id="Quantidade" type="number" placeholder="" />
+              </div>
+              <div class="campo">
+                <label for="Motivo">Motivo</label
+                ><select id="Motivo">
+                  <option>Validade</option>
+                  <option>Embalagem danificada</option>
+                  <option>Erro de produção</option>
+                  <option>Armazenamento inadequado</option>
+                  <option>Produto fora do padrão</option>
+                  <option>Outros</option>
+                </select>
+              </div>
+              <div class="campo">
+                <label for="Valor estimado">Valor estimado</label
+                ><input id="Valor estimado" type="text" placeholder="R$ 0,00" />
+              </div>
+              <div class="campo">
+                <label for="Data">Data</label
+                ><input id="Data" type="date" placeholder="" />
+              </div>
+              <div class="botoes largo">
+                <button class="botao" type="button">Registrar perda</button
+                ><button class="botao sec" type="reset">Limpar</button>
+              </div>
+            </form>
+          </section>
+          <section class="bloco">
+            <h2>Perdas recentes</h2>
+            <div class="tabela">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Data</th>
+                    <th>Produto</th>
+                    <th>Lote</th>
+                    <th class="num">Qtd.</th>
+                    <th>Motivo</th>
+                    <th class="num">Valor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>28/09</td>
+                    <td>Lasanha Bolonhesa</td>
+                    <td>LOT-2026-043</td>
+                    <td class="num">20</td>
+                    <td>Armazenamento inadequado</td>
+                    <td class="num">R$ 250,00</td>
+                  </tr>
+                  <tr>
+                    <td>27/09</td>
+                    <td>Coxinha de Frango</td>
+                    <td>LOT-2026-042</td>
+                    <td class="num">30</td>
+                    <td>Produto fora do padrão</td>
+                    <td class="num">R$ 270,00</td>
+                  </tr>
+                  <tr>
+                    <td>26/09</td>
+                    <td>Pizza Calabresa</td>
+                    <td>LOT-2026-039</td>
+                    <td class="num">35</td>
+                    <td>Armazenamento inadequado</td>
+                    <td class="num">R$ 630,00</td>
+                  </tr>
+                  <tr>
+                    <td>25/09</td>
+                    <td>Pastel de Carne</td>
+                    <td>LOT-2026-041</td>
+                    <td class="num">25</td>
+                    <td>Embalagem danificada</td>
+                    <td class="num">R$ 162,50</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
+

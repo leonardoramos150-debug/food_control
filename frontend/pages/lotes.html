@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Lotes - FoodControl 4.0</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <nav class="menu" aria-label="Menu principal">
+        <div class="marca">
+          <img src="../assets/img/logo.png" alt="FoodControl 4.0" />
+        </div>
+        <a href="dashboard.html">Dashboard</a
+        ><a href="produtos.html">Produtos</a
+        ><a href="lotes.html" class="ativo" aria-current="page">Lotes</a
+        ><a href="producao.html">Produção</a><a href="estoque.html">Estoque</a
+        ><a href="pedidos.html">Pedidos</a><a href="perdas.html">Perdas</a
+        ><a href="alertas.html">Alertas</a
+        ><a href="relatorios.html">Relatórios</a
+        ><a href="usuarios.html">Usuários</a>
+      </nav>
+      <main class="conteudo">
+        <header class="topo">
+          <div>
+            <h1>Lotes</h1>
+            <p>Validade e saldo de cada lote, com destaque automático</p>
+          </div>
+          <div class="usuario">
+            <div class="foto">MD</div>
+            <div>Marina Duarte<small>Administrador</small></div>
+            <a class="sair" href="../index.html">Sair</a>
+          </div>
+        </header>
+        <section class="bloco">
+          <h2>Lotes</h2>
+          <div class="filtros">
+            <div>
+              <label for="fPesquisar">Pesquisar</label
+              ><input
+                id="fPesquisar"
+                type="search"
+                placeholder="Número do lote"
+              />
+            </div>
+            <div>
+              <label for="fProduto">Produto</label
+              ><select id="fProduto">
+                <option>Todos</option>
+                <option>Lasanha Bolonhesa</option>
+                <option>Pizza Calabresa</option>
+                <option>Pastel de Carne</option>
+              </select>
+            </div>
+            <div>
+              <label for="fSituação">Situação</label
+              ><select id="fSituação">
+                <option>Todas</option>
+                <option>Normal</option>
+                <option>Atenção</option>
+                <option>Crítico</option>
+                <option>Vencido</option>
+              </select>
+            </div>
+          </div>
+          <div class="tabela">
+            <table>
+              <thead>
+                <tr>
+                  <th>Lote</th>
+                  <th>Produto</th>
+                  <th>Produção</th>
+                  <th>Validade</th>
+                  <th class="num">Saldo</th>
+                  <th>Situação</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>LOT-2026-021</td>
+                  <td>Lasanha Bolonhesa</td>
+                  <td>07/07/2026</td>
+                  <td>05/10/2026</td>
+                  <td class="num">320</td>
+                  <td><span class="selo critico">Crítico: 5 dias</span></td>
+                  <td><a class="botao sec peq" href="#">Bloquear</a></td>
+                </tr>
+                <tr>
+                  <td>LOT-2026-024</td>
+                  <td>Lasanha Bolonhesa</td>
+                  <td>14/07/2026</td>
+                  <td>12/10/2026</td>
+                  <td class="num">100</td>
+                  <td><span class="selo atencao">Atenção: 12 dias</span></td>
+                  <td><a class="botao sec peq" href="#">Bloquear</a></td>
+                </tr>
+                <tr>
+                  <td>LOT-2026-030</td>
+                  <td>Pastel de Carne</td>
+                  <td>01/08/2026</td>
+                  <td>29/09/2026</td>
+                  <td class="num">60</td>
+                  <td><span class="selo critico">Vencido</span></td>
+                  <td>
+                    <a class="botao peq" href="perdas.html">Registrar perda</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>LOT-2026-043</td>
+                  <td>Lasanha Bolonhesa</td>
+                  <td>25/09/2026</td>
+                  <td>24/12/2026</td>
+                  <td class="num">580</td>
+                  <td><span class="selo">Normal</span></td>
+                  <td><a class="botao sec peq" href="#">Bloquear</a></td>
+                </tr>
+                <tr>
+                  <td>LOT-2026-039</td>
+                  <td>Pizza Calabresa</td>
+                  <td>15/09/2026</td>
+                  <td>13/01/2027</td>
+                  <td class="num">100</td>
+                  <td><span class="selo">Normal</span></td>
+                  <td><a class="botao sec peq" href="#">Bloquear</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="rodape">
+            Os lotes são criados na tela Produção, junto com a entrada no
+            estoque.
+          </p>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+

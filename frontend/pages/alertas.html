@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Alertas - FoodControl 4.0</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <nav class="menu" aria-label="Menu principal">
+        <div class="marca">
+          <img src="../assets/img/logo.png" alt="FoodControl 4.0" />
+        </div>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="lotes.html">Lotes</a>
+        <a href="producao.html">Produção</a>
+        <a href="estoque.html">Estoque</a>
+        <a href="pedidos.html">Pedidos</a>
+        <a href="perdas.html">Perdas</a>
+        <a href="alertas.html" class="ativo" aria-current="page">Alertas</a>
+        <a href="relatorios.html">Relatórios</a>
+        <a href="usuarios.html">Usuários</a>
+      </nav>
+
+      <main class="conteudo">
+        <header class="topo">
+          <div>
+            <h1>Alertas</h1>
+            <p>Situações que precisam de atenção</p>
+          </div>
+          <div class="usuario">
+            <div class="foto">MD</div>
+            <div>
+              Marina Duarte
+              <small>Administrador</small>
+            </div>
+            <a class="sair" href="../index.html">Sair</a>
+          </div>
+        </header>
+
+        <section class="bloco">
+          <h2>Alertas abertos</h2>
+          <form class="filtros">
+            <div>
+              <label for="fTipo">Tipo</label>
+              <select id="fTipo">
+                <option>Todos</option>
+                <option>Validade</option>
+                <option>Estoque</option>
+                <option>Desperdício</option>
+                <option>Pedido</option>
+              </select>
+            </div>
+            <div>
+              <label for="fNivel">Nível</label>
+              <select id="fNivel">
+                <option>Todos</option>
+                <option>Atenção</option>
+                <option>Crítico</option>
+              </select>
+            </div>
+            <div>
+              <label for="fStatus">Status</label>
+              <select id="fStatus">
+                <option>Aberto</option>
+                <option>Resolvido</option>
+              </select>
+            </div>
+            <button type="button" class="botao">Atualizar alertas</button>
+          </form>
+
+          <div class="alerta critico">
+            <div>
+              <p>
+                <span class="selo critico">Validade</span>
+                <strong
+                  >320 un da Lasanha Bolonhesa (LOT-2026-021) vencem em 5
+                  dias</strong
+                >
+              </p>
+              <small>Gerado em 07/10/2026</small>
+            </div>
+            <button type="button" class="botao sec peq acao">
+              Marcar como resolvido
+            </button>
+          </div>
+
+          <div class="alerta atencao">
+            <div>
+              <p>
+                <span class="selo atencao">Validade</span>
+                <strong
+                  >100 un da Lasanha Bolonhesa (LOT-2026-024) vencem em 12
+                  dias</strong
+                >
+              </p>
+              <small>Gerado em 07/10/2026</small>
+            </div>
+            <button type="button" class="botao sec peq acao">
+              Marcar como resolvido
+            </button>
+          </div>
+
+          <div class="alerta atencao">
+            <div>
+              <p>
+                <span class="selo atencao">Estoque</span>
+                <strong
+                  >Strogonoff de Frango está abaixo do estoque mínimo (40 de
+                  60)</strong
+                >
+              </p>
+              <small>Gerado em 07/10/2026</small>
+            </div>
+            <button type="button" class="botao sec peq acao">
+              Marcar como resolvido
+            </button>
+          </div>
+
+          <div class="alerta atencao">
+            <div>
+              <p>
+                <span class="selo atencao">Desperdício</span>
+                <strong
+                  >Lasanha Bolonhesa: perdas 25% maiores que no mês
+                  anterior</strong
+                >
+              </p>
+              <small>145 un contra 116 un</small>
+            </div>
+            <button type="button" class="botao sec peq acao">
+              Marcar como resolvido
+            </button>
+          </div>
+
+          <div class="alerta critico">
+            <div>
+              <p>
+                <span class="selo critico">Pedido</span>
+                <strong
+                  >Pedido 1005: Strogonoff de Frango 60 un, estoque disponível
+                  40 un</strong
+                >
+              </p>
+              <small>Gerado em 07/10/2026</small>
+            </div>
+            <button type="button" class="botao sec peq acao">
+              Marcar como resolvido
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+

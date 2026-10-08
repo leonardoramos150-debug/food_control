@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pedidos - FoodControl 4.0</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <nav class="menu" aria-label="Menu principal">
+        <div class="marca">
+          <img src="../assets/img/logo.png" alt="FoodControl 4.0" />
+        </div>
+        <a href="dashboard.html">Dashboard</a
+        ><a href="produtos.html">Produtos</a><a href="lotes.html">Lotes</a
+        ><a href="producao.html">Produção</a><a href="estoque.html">Estoque</a
+        ><a href="pedidos.html" class="ativo" aria-current="page">Pedidos</a
+        ><a href="perdas.html">Perdas</a><a href="alertas.html">Alertas</a
+        ><a href="relatorios.html">Relatórios</a
+        ><a href="usuarios.html">Usuários</a>
+      </nav>
+      <main class="conteudo">
+        <header class="topo">
+          <div>
+            <h1>Pedidos</h1>
+            <p>Pedidos dos clientes, itens e andamento</p>
+          </div>
+          <div class="usuario">
+            <div class="foto">MD</div>
+            <div>Marina Duarte<small>Administrador</small></div>
+            <a class="sair" href="../index.html">Sair</a>
+          </div>
+        </header>
+        <section class="bloco">
+          <h2>Andamento do pedido</h2>
+          <div class="fluxo">
+            <span>Pendente</span><em>›</em><span>Em preparação</span><em>›</em
+            ><span>Pronto</span><em>›</em><span>Enviado</span><em>›</em
+            ><span>Entregue</span>
+          </div>
+          <p class="rodape">
+            A saída do estoque é registrada quando o pedido passa para Enviado.
+          </p>
+        </section>
+        <section class="bloco">
+          <h2>Pedidos</h2>
+          <div class="filtros">
+            <div>
+              <label for="fPesquisar">Pesquisar</label
+              ><input
+                id="fPesquisar"
+                type="search"
+                placeholder="Cliente ou número"
+              />
+            </div>
+            <div>
+              <label for="fStatus">Status</label
+              ><select id="fStatus">
+                <option>Todos</option>
+                <option>Pendente</option>
+                <option>Em preparação</option>
+                <option>Pronto</option>
+                <option>Enviado</option>
+                <option>Entregue</option>
+                <option>Cancelado</option>
+              </select>
+            </div>
+            <a class="botao" href="#">Novo pedido</a>
+          </div>
+          <div class="tabela">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nº</th>
+                  <th>Cliente</th>
+                  <th>Pedido</th>
+                  <th>Entrega</th>
+                  <th>Status</th>
+                  <th class="num">Valor total</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1000</td>
+                  <td>Mercado Central</td>
+                  <td>28/09</td>
+                  <td>02/10</td>
+                  <td><span class="selo info">Em preparação</span></td>
+                  <td class="num">R$ 3.400,00</td>
+                  <td><a class="botao sec peq" href="#">Ver</a></td>
+                </tr>
+                <tr>
+                  <td>1001</td>
+                  <td>Supermercado Bom Preço</td>
+                  <td>28/09</td>
+                  <td>03/10</td>
+                  <td><span class="selo atencao">Pendente</span></td>
+                  <td class="num">R$ 5.825,00</td>
+                  <td><a class="botao sec peq" href="#">Ver</a></td>
+                </tr>
+                <tr>
+                  <td>1002</td>
+                  <td>Atacado Meio-Oeste</td>
+                  <td>29/09</td>
+                  <td>05/10</td>
+                  <td><span class="selo atencao">Pendente</span></td>
+                  <td class="num">R$ 7.305,00</td>
+                  <td><a class="botao sec peq" href="#">Ver</a></td>
+                </tr>
+                <tr>
+                  <td>1003</td>
+                  <td>Padaria e Lanchonete Estrela</td>
+                  <td>29/09</td>
+                  <td>04/10</td>
+                  <td><span class="selo">Pronto</span></td>
+                  <td class="num">R$ 2.000,00</td>
+                  <td><a class="botao sec peq" href="#">Ver</a></td>
+                </tr>
+                <tr>
+                  <td>1004</td>
+                  <td>Rede Vale Mais</td>
+                  <td>30/09</td>
+                  <td>07/10</td>
+                  <td><span class="selo atencao">Pendente</span></td>
+                  <td class="num">R$ 1.560,00</td>
+                  <td><a class="botao sec peq" href="#">Ver</a></td>
+                </tr>
+                <tr>
+                  <td>1005</td>
+                  <td>Mercado Central</td>
+                  <td>30/09</td>
+                  <td>06/10</td>
+                  <td><span class="selo atencao">Pendente</span></td>
+                  <td class="num">R$ 1.185,00</td>
+                  <td><a class="botao sec peq" href="#">Ver</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+

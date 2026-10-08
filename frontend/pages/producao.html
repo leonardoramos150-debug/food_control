@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Produção - FoodControl 4.0</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <nav class="menu" aria-label="Menu principal">
+        <div class="marca">
+          <img src="../assets/img/logo.png" alt="FoodControl 4.0" />
+        </div>
+        <a href="dashboard.html">Dashboard</a
+        ><a href="produtos.html">Produtos</a><a href="lotes.html">Lotes</a
+        ><a href="producao.html" class="ativo" aria-current="page">Produção</a
+        ><a href="estoque.html">Estoque</a><a href="pedidos.html">Pedidos</a
+        ><a href="perdas.html">Perdas</a><a href="alertas.html">Alertas</a
+        ><a href="relatorios.html">Relatórios</a
+        ><a href="usuarios.html">Usuários</a>
+      </nav>
+      <main class="conteudo">
+        <header class="topo">
+          <div>
+            <h1>Produção</h1>
+            <p>
+              Registre a produção: o sistema cria o lote e a entrada no estoque
+            </p>
+          </div>
+          <div class="usuario">
+            <div class="foto">MD</div>
+            <div>Marina Duarte<small>Administrador</small></div>
+            <a class="sair" href="../index.html">Sair</a>
+          </div>
+        </header>
+        <div class="grade g2">
+          <section class="bloco">
+            <h2>Nova produção</h2>
+            <form class="formulario">
+              <div class="campo">
+                <label for="Produto">Produto</label
+                ><select id="Produto">
+                  <option>Lasanha Bolonhesa</option>
+                  <option>Pizza Calabresa</option>
+                  <option>Coxinha de Frango</option>
+                </select>
+              </div>
+              <div class="campo">
+                <label for="Turno">Turno</label
+                ><select id="Turno">
+                  <option>Manhã</option>
+                  <option>Tarde</option>
+                  <option>Noite</option>
+                </select>
+              </div>
+              <div class="campo">
+                <label for="Quantidade planejada">Quantidade planejada</label
+                ><input
+                  id="Quantidade planejada"
+                  type="number"
+                  placeholder=""
+                />
+              </div>
+              <div class="campo">
+                <label for="Quantidade produzida">Quantidade produzida</label
+                ><input
+                  id="Quantidade produzida"
+                  type="number"
+                  placeholder=""
+                />
+              </div>
+              <div class="campo">
+                <label for="Data da produção">Data da produção</label
+                ><input id="Data da produção" type="date" placeholder="" />
+              </div>
+              <div class="campo">
+                <label for="Validade sugerida">Validade sugerida</label
+                ><input id="Validade sugerida" type="date" placeholder="" />
+              </div>
+              <div class="campo largo">
+                <label for="Observação">Observação</label
+                ><textarea id="Observação" placeholder="Opcional"></textarea>
+              </div>
+              <div class="botoes largo">
+                <button class="botao" type="button">Registrar produção</button
+                ><button class="botao sec" type="reset">Limpar</button>
+              </div>
+            </form>
+          </section>
+          <section class="bloco">
+            <h2>Produções recentes</h2>
+            <div class="tabela">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Lote</th>
+                    <th>Produto</th>
+                    <th>Data</th>
+                    <th class="num">Planejada</th>
+                    <th class="num">Produzida</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>LOT-2026-043</td>
+                    <td>Lasanha Bolonhesa</td>
+                    <td>25/09</td>
+                    <td class="num">600</td>
+                    <td class="num">600</td>
+                  </tr>
+                  <tr>
+                    <td>LOT-2026-042</td>
+                    <td>Coxinha de Frango</td>
+                    <td>22/09</td>
+                    <td class="num">1.200</td>
+                    <td class="num">1.200</td>
+                  </tr>
+                  <tr>
+                    <td>LOT-2026-041</td>
+                    <td>Pastel de Carne</td>
+                    <td>20/09</td>
+                    <td class="num">700</td>
+                    <td class="num">700</td>
+                  </tr>
+                  <tr>
+                    <td>LOT-2026-039</td>
+                    <td>Pizza Calabresa</td>
+                    <td>15/09</td>
+                    <td class="num">500</td>
+                    <td class="num">500</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
+

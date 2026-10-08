@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Relatórios - FoodControl 4.0</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <nav class="menu" aria-label="Menu principal">
+        <div class="marca">
+          <img src="../assets/img/logo.png" alt="FoodControl 4.0" />
+        </div>
+        <a href="dashboard.html">Dashboard</a
+        ><a href="produtos.html">Produtos</a><a href="lotes.html">Lotes</a
+        ><a href="producao.html">Produção</a><a href="estoque.html">Estoque</a
+        ><a href="pedidos.html">Pedidos</a><a href="perdas.html">Perdas</a
+        ><a href="alertas.html">Alertas</a
+        ><a href="relatorios.html" class="ativo" aria-current="page"
+          >Relatórios</a
+        ><a href="usuarios.html">Usuários</a>
+      </nav>
+      <main class="conteudo">
+        <header class="topo">
+          <div>
+            <h1>Relatórios</h1>
+            <p>Perdas, estoque, produção e pedidos</p>
+          </div>
+          <div class="usuario">
+            <div class="foto">MD</div>
+            <div>Marina Duarte<small>Administrador</small></div>
+            <a class="sair" href="../index.html">Sair</a>
+          </div>
+        </header>
+        <div class="grade g2">
+          <section class="bloco rel">
+            <h2>Relatório de perdas</h2>
+            <p>Produto, lote, quantidade, motivo, valor e período.</p>
+            <div class="filtros">
+              <div>
+                <label for="fDe">De</label
+                ><select id="fDe">
+                  <option>d</option>
+                  <option>a</option>
+                  <option>t</option>
+                  <option>e</option>
+                </select>
+              </div>
+              <div>
+                <label for="fAté">Até</label
+                ><select id="fAté">
+                  <option>d</option>
+                  <option>a</option>
+                  <option>t</option>
+                  <option>e</option>
+                </select>
+              </div>
+              <div>
+                <label for="fProduto">Produto</label
+                ><select id="fProduto">
+                  <option>Todos</option>
+                  <option>Lasanha Bolonhesa</option>
+                  <option>Pizza Calabresa</option>
+                </select>
+              </div>
+              <a class="botao" href="#">Gerar relatório</a>
+            </div>
+          </section>
+          <section class="bloco rel">
+            <h2>Relatório de estoque</h2>
+            <p>
+              Saldo, estoque mínimo, produtos em falta e lotes próximos da
+              validade.
+            </p>
+            <div class="filtros">
+              <div>
+                <label for="fSituação">Situação</label
+                ><select id="fSituação">
+                  <option>Todos</option>
+                  <option>Normal</option>
+                  <option>Baixo</option>
+                </select>
+              </div>
+              <a class="botao" href="#">Gerar relatório</a>
+            </div>
+          </section>
+          <section class="bloco rel">
+            <h2>Relatório de produção</h2>
+            <p>Produção por dia e produto, planejado e produzido.</p>
+            <div class="filtros">
+              <div>
+                <label for="fDe">De</label
+                ><select id="fDe">
+                  <option>d</option>
+                  <option>a</option>
+                  <option>t</option>
+                  <option>e</option>
+                </select>
+              </div>
+              <div>
+                <label for="fAté">Até</label
+                ><select id="fAté">
+                  <option>d</option>
+                  <option>a</option>
+                  <option>t</option>
+                  <option>e</option>
+                </select>
+              </div>
+              <div>
+                <label for="fTurno">Turno</label
+                ><select id="fTurno">
+                  <option>Todos</option>
+                  <option>Manhã</option>
+                  <option>Tarde</option>
+                  <option>Noite</option>
+                </select>
+              </div>
+              <a class="botao" href="#">Gerar relatório</a>
+            </div>
+          </section>
+          <section class="bloco rel">
+            <h2>Relatório de pedidos</h2>
+            <p>Pedidos pendentes e concluídos e produtos mais solicitados.</p>
+            <div class="filtros">
+              <div>
+                <label for="fDe">De</label
+                ><select id="fDe">
+                  <option>d</option>
+                  <option>a</option>
+                  <option>t</option>
+                  <option>e</option>
+                </select>
+              </div>
+              <div>
+                <label for="fAté">Até</label
+                ><select id="fAté">
+                  <option>d</option>
+                  <option>a</option>
+                  <option>t</option>
+                  <option>e</option>
+                </select>
+              </div>
+              <div>
+                <label for="fStatus">Status</label
+                ><select id="fStatus">
+                  <option>Todos</option>
+                  <option>Pendente</option>
+                  <option>Entregue</option>
+                </select>
+              </div>
+              <a class="botao" href="#">Gerar relatório</a>
+            </div>
+          </section>
+        </div>
+        <section class="bloco">
+          <h2>Prévia: perdas por motivo, setembro de 2026</h2>
+          <div class="tabela">
+            <table>
+              <thead>
+                <tr>
+                  <th>Motivo</th>
+                  <th class="num">Valor perdido</th>
+                  <th class="num">Participação</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Embalagem danificada</td>
+                  <td class="num">R$ 1.085,00</td>
+                  <td class="num">31,8%</td>
+                </tr>
+                <tr>
+                  <td>Armazenamento inadequado</td>
+                  <td class="num">R$ 1.060,00</td>
+                  <td class="num">31,0%</td>
+                </tr>
+                <tr>
+                  <td>Validade</td>
+                  <td class="num">R$ 1.000,00</td>
+                  <td class="num">29,3%</td>
+                </tr>
+                <tr>
+                  <td>Produto fora do padrão</td>
+                  <td class="num">R$ 270,00</td>
+                  <td class="num">7,9%</td>
+                </tr>
+                <tr>
+                  <td>Total</td>
+                  <td class="num">R$ 3.415,00</td>
+                  <td class="num">100%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+

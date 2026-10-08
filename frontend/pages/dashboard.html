@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Dashboard - FoodControl 4.0</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <nav class="menu" aria-label="Menu principal">
+        <div class="marca">
+          <img src="../assets/img/logo.png" alt="FoodControl 4.0" />
+        </div>
+        <a href="dashboard.html" class="ativo" aria-current="page">Dashboard</a
+        ><a href="produtos.html">Produtos</a><a href="lotes.html">Lotes</a
+        ><a href="producao.html">Produção</a><a href="estoque.html">Estoque</a
+        ><a href="pedidos.html">Pedidos</a><a href="perdas.html">Perdas</a
+        ><a href="alertas.html">Alertas</a
+        ><a href="relatorios.html">Relatórios</a
+        ><a href="usuarios.html">Usuários</a>
+      </nav>
+      <main class="conteudo">
+        <header class="topo">
+          <div>
+            <h1>Dashboard</h1>
+            <p>Situação da produção e do estoque em 07/10/2026</p>
+          </div>
+          <div class="usuario">
+            <div class="foto">MD</div>
+            <div>Marina Duarte<small>Administrador</small></div>
+            <a class="sair" href="../index.html">Sair</a>
+          </div>
+        </header>
+        <div class="grade g4" style="margin-bottom: 22px">
+          <div class="kpi">
+            <span>Estoque total</span><strong>2.690 un</strong
+            ><small>lotes disponíveis</small>
+          </div>
+          <div class="kpi atencao">
+            <span>Próximos da validade</span><strong>2 lotes</strong
+            ><small>420 unidades em até 15 dias</small>
+          </div>
+          <div class="kpi critico">
+            <span>Vencidos com saldo</span><strong>1 lote</strong
+            ><small>60 unidades para dar baixa</small>
+          </div>
+          <div class="kpi critico">
+            <span>Perdas no mês</span><strong>R$ 3.415,00</strong
+            ><small>265 unidades</small>
+          </div>
+          <div class="kpi info">
+            <span>Pedidos pendentes</span><strong>6 pedidos</strong
+            ><small>R$ 21.275,00</small>
+          </div>
+          <div class="kpi atencao">
+            <span>Abaixo do estoque mínimo</span><strong>1 produto</strong
+            ><small>Strogonoff de Frango</small>
+          </div>
+          <div class="kpi">
+            <span>Produção do mês</span><strong>4.030 un</strong
+            ><small>99,5% do planejado</small>
+          </div>
+          <div class="kpi critico">
+            <span>Produtos com risco alto</span><strong>1 produto</strong
+            ><small>Lasanha Bolonhesa</small>
+          </div>
+        </div>
+        <div class="grade g2">
+          <section class="bloco">
+            <h2>Alertas abertos</h2>
+            <div class="alerta critico">
+              <div>
+                <p><strong>320 un de Lasanha vencem em 5 dias</strong></p>
+                <small>LOT-2026-021, validade 05/10/2026</small>
+              </div>
+              <a class="botao sec peq acao" href="alertas.html">Ver</a>
+            </div>
+            <div class="alerta critico">
+              <div>
+                <p><strong>LOT-2026-030 (Pastel de Carne) venceu</strong></p>
+                <small>60 un ainda em estoque</small>
+              </div>
+              <a class="botao sec peq acao" href="alertas.html">Ver</a>
+            </div>
+            <div class="alerta">
+              <div>
+                <p><strong>Strogonoff abaixo do mínimo</strong></p>
+                <small>40 de 60 unidades</small>
+              </div>
+              <a class="botao sec peq acao" href="alertas.html">Ver</a>
+            </div>
+            <div class="alerta">
+              <div>
+                <p>
+                  <strong>Pizza: perda crescente nos últimos 3 lotes</strong>
+                </p>
+                <small>2,2%, 4,2% e 7,0%</small>
+              </div>
+              <a class="botao sec peq acao" href="alertas.html">Ver</a>
+            </div>
+          </section>
+          <section class="bloco">
+            <h2>Perdas por produto no mês</h2>
+            <div class="barra">
+              <span>Lasanha Bolonhesa</span>
+              <div class="trilho"><i style="width: 100%"></i></div>
+              <b>R$ 1.812,50</b>
+            </div>
+            <div class="barra">
+              <span>Pizza Calabresa</span>
+              <div class="trilho"><i style="width: 65%"></i></div>
+              <b>R$ 1.170,00</b>
+            </div>
+            <div class="barra">
+              <span>Coxinha de Frango</span>
+              <div class="trilho"><i style="width: 15%"></i></div>
+              <b>R$ 270,00</b>
+            </div>
+            <div class="barra">
+              <span>Pastel de Carne</span>
+              <div class="trilho"><i style="width: 9%"></i></div>
+              <b>R$ 162,50</b>
+            </div>
+            <p class="rodape">Total do mês: R$ 3.415,00</p>
+          </section>
+        </div>
+        <section class="bloco">
+          <h2>Risco de estoque e produção recomendada</h2>
+          <div class="tabela">
+            <table>
+              <thead>
+                <tr>
+                  <th>Produto</th>
+                  <th class="num">Estoque</th>
+                  <th class="num">Pendentes</th>
+                  <th class="num">Índice de risco</th>
+                  <th>Nível</th>
+                  <th class="num">Produção recomendada</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Lasanha Bolonhesa</td>
+                  <td class="num">1.000</td>
+                  <td class="num">600</td>
+                  <td class="num">49,62</td>
+                  <td><span class="selo critico">Alto</span></td>
+                  <td class="num">0</td>
+                </tr>
+                <tr>
+                  <td>Pastel de Carne</td>
+                  <td class="num">500</td>
+                  <td class="num">220</td>
+                  <td class="num">30,65</td>
+                  <td><span class="selo atencao">Médio</span></td>
+                  <td class="num">0</td>
+                </tr>
+                <tr>
+                  <td>Coxinha de Frango</td>
+                  <td class="num">900</td>
+                  <td class="num">450</td>
+                  <td class="num">28,16</td>
+                  <td><span class="selo atencao">Médio</span></td>
+                  <td class="num">0</td>
+                </tr>
+                <tr>
+                  <td>Pizza Calabresa</td>
+                  <td class="num">100</td>
+                  <td class="num">300</td>
+                  <td class="num">23,70</td>
+                  <td><span class="selo atencao">Médio</span></td>
+                  <td class="num">300</td>
+                </tr>
+                <tr>
+                  <td>Strogonoff de Frango</td>
+                  <td class="num">40</td>
+                  <td class="num">120</td>
+                  <td class="num">20,00</td>
+                  <td><span class="selo atencao">Médio</span></td>
+                  <td class="num">140</td>
+                </tr>
+                <tr>
+                  <td>Massa Tagliatelle</td>
+                  <td class="num">150</td>
+                  <td class="num">130</td>
+                  <td class="num">3,85</td>
+                  <td><span class="selo">Baixo</span></td>
+                  <td class="num">60</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+
