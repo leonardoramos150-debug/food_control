@@ -2,157 +2,231 @@
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Alertas - FoodControl 4.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alertas - FoodControl</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <body>
-    <div class="app">
-      <nav class="menu" aria-label="Menu principal">
-        <div class="marca">
-          <img src="../assets/img/logo.png" alt="FoodControl 4.0" />
+    <div class="app-layout">
+      <!-- Sidebar com Logo Isolada -->
+      <aside class="app-sidebar" aria-label="Menu Principal">
+        <div class="sidebar-header">
+          <a href="dashboard.html" class="sidebar-brand-standalone" title="Página Inicial">
+            <img src="../assets/img/logo-white.png" alt="FoodControl" class="sidebar-logo-img" />
+          </a>
         </div>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="produtos.html">Produtos</a>
-        <a href="lotes.html">Lotes</a>
-        <a href="producao.html">Produção</a>
-        <a href="estoque.html">Estoque</a>
-        <a href="pedidos.html">Pedidos</a>
-        <a href="perdas.html">Perdas</a>
-        <a href="alertas.html" class="ativo" aria-current="page">Alertas</a>
-        <a href="relatorios.html">Relatórios</a>
-        <a href="usuarios.html">Usuários</a>
-      </nav>
 
-      <main class="conteudo">
-        <header class="topo">
-          <div>
-            <h1>Alertas</h1>
-            <p>Situações que precisam de atenção</p>
+        <nav class="sidebar-nav">
+          <div class="nav-section">
+            <span class="nav-section-title">Visão Geral</span>
+            <a href="dashboard.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="9" rx="1"></rect><rect x="14" y="3" width="7" height="5" rx="1"></rect><rect x="14" y="12" width="7" height="9" rx="1"></rect><rect x="3" y="16" width="7" height="5" rx="1"></rect></svg>
+              <span>Dashboard</span>
+            </a>
           </div>
-          <div class="usuario">
-            <div class="foto">MD</div>
-            <div>
-              Marina Duarte
-              <small>Administrador</small>
+
+          <div class="nav-section">
+            <span class="nav-section-title">Operação</span>
+            <a href="produtos.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+              <span>Produtos</span>
+            </a>
+            <a href="lotes.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16.5 9.4 7.55 4.24a1.78 1.78 0 0 0-2.5 1.55v12.42a1.78 1.78 0 0 0 2.5 1.55L16.5 14.6a1.78 1.78 0 0 0 0-3.2z"></path><polyline points="18 4 18 20"></polyline></svg>
+              <span>Lotes & Validade</span>
+            </a>
+            <a href="producao.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              <span>Produção</span>
+            </a>
+            <a href="estoque.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+              <span>Estoque</span>
+            </a>
+          </div>
+
+          <div class="nav-section">
+            <span class="nav-section-title">Comercial</span>
+            <a href="pedidos.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+              <span>Pedidos</span>
+            </a>
+          </div>
+
+          <div class="nav-section">
+            <span class="nav-section-title">Qualidade</span>
+            <a href="perdas.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg>
+              <span>Perdas</span>
+            </a>
+            <a href="alertas.html" class="nav-link active" aria-current="page">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              <span>Alertas</span>
+              <span class="nav-pill">5</span>
+            </a>
+          </div>
+
+          <div class="nav-section">
+            <span class="nav-section-title">Administração</span>
+            <a href="relatorios.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              <span>Relatórios</span>
+            </a>
+            <a href="usuarios.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              <span>Usuários & Acessos</span>
+            </a>
+          </div>
+        </nav>
+
+        <div class="sidebar-footer">
+          <span class="company-name">SaborSul Alimentos</span>
+          <a href="../index.html" class="sidebar-logout" title="Sair do sistema">Sair</a>
+        </div>
+      </aside>
+
+      <!-- Área de Conteúdo Principal -->
+      <main class="app-main">
+        <header class="app-header">
+          <div class="header-breadcrumbs">
+            <a href="dashboard.html">Início</a>
+            <span class="separator">/</span>
+            <span>Qualidade</span>
+            <span class="separator">/</span>
+            <span class="current">Alertas</span>
+          </div>
+
+          <div class="header-right">
+            <div class="operational-date-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <span>30/09/2026</span>
             </div>
-            <a class="sair" href="../index.html">Sair</a>
+
+            <div class="user-profile">
+              <div class="user-avatar">MD</div>
+              <div class="user-details">
+                <span class="user-name">Marina Duarte</span>
+                <span class="user-role">Administrador</span>
+              </div>
+            </div>
           </div>
         </header>
 
-        <section class="bloco">
-          <h2>Alertas abertos</h2>
-          <form class="filtros">
-            <div>
-              <label for="fTipo">Tipo</label>
-              <select id="fTipo">
-                <option>Todos</option>
-                <option>Validade</option>
-                <option>Estoque</option>
-                <option>Desperdício</option>
-                <option>Pedido</option>
-              </select>
+        <div class="page-container">
+          <div class="page-header">
+            <div class="page-title-group">
+              <h1>Central de Alertas</h1>
+              <p>Ocorrências que exigem ação preventiva no estoque ou na produção.</p>
             </div>
-            <div>
-              <label for="fNivel">Nível</label>
-              <select id="fNivel">
-                <option>Todos</option>
-                <option>Atenção</option>
-                <option>Crítico</option>
-              </select>
-            </div>
-            <div>
-              <label for="fStatus">Status</label>
-              <select id="fStatus">
-                <option>Aberto</option>
-                <option>Resolvido</option>
-              </select>
-            </div>
-            <button type="button" class="botao">Atualizar alertas</button>
-          </form>
-
-          <div class="alerta critico">
-            <div>
-              <p>
-                <span class="selo critico">Validade</span>
-                <strong
-                  >320 un da Lasanha Bolonhesa (LOT-2026-021) vencem em 5
-                  dias</strong
-                >
-              </p>
-              <small>Gerado em 07/10/2026</small>
-            </div>
-            <button type="button" class="botao sec peq acao">
-              Marcar como resolvido
-            </button>
           </div>
 
-          <div class="alerta atencao">
-            <div>
-              <p>
-                <span class="selo atencao">Validade</span>
-                <strong
-                  >100 un da Lasanha Bolonhesa (LOT-2026-024) vencem em 12
-                  dias</strong
-                >
-              </p>
-              <small>Gerado em 07/10/2026</small>
-            </div>
-            <button type="button" class="botao sec peq acao">
-              Marcar como resolvido
-            </button>
-          </div>
+          <section class="card-panel">
+            <div class="filter-bar">
+              <div class="filter-group">
+                <label for="fTipo">Categoria</label>
+                <select id="fTipo" class="select-control">
+                  <option>Todas</option>
+                  <option>Validade</option>
+                  <option>Estoque</option>
+                  <option>Desperdício</option>
+                  <option>Pedido</option>
+                </select>
+              </div>
 
-          <div class="alerta atencao">
-            <div>
-              <p>
-                <span class="selo atencao">Estoque</span>
-                <strong
-                  >Strogonoff de Frango está abaixo do estoque mínimo (40 de
-                  60)</strong
-                >
-              </p>
-              <small>Gerado em 07/10/2026</small>
-            </div>
-            <button type="button" class="botao sec peq acao">
-              Marcar como resolvido
-            </button>
-          </div>
+              <div class="filter-group">
+                <label for="fNivel">Severidade</label>
+                <select id="fNivel" class="select-control">
+                  <option>Todas</option>
+                  <option>Crítico</option>
+                  <option>Atenção</option>
+                </select>
+              </div>
 
-          <div class="alerta atencao">
-            <div>
-              <p>
-                <span class="selo atencao">Desperdício</span>
-                <strong
-                  >Lasanha Bolonhesa: perdas 25% maiores que no mês
-                  anterior</strong
-                >
-              </p>
-              <small>145 un contra 116 un</small>
+              <div style="margin-left: auto; align-self: flex-end; padding-bottom: 6px">
+                <span class="panel-badge">5 alertas ativos</span>
+              </div>
             </div>
-            <button type="button" class="botao sec peq acao">
-              Marcar como resolvido
-            </button>
-          </div>
 
-          <div class="alerta critico">
-            <div>
-              <p>
-                <span class="selo critico">Pedido</span>
-                <strong
-                  >Pedido 1005: Strogonoff de Frango 60 un, estoque disponível
-                  40 un</strong
-                >
-              </p>
-              <small>Gerado em 07/10/2026</small>
+            <!-- Alertas Abertos com Resolução Funcional -->
+            <div class="alert-item critico">
+              <div class="alert-content">
+                <div class="alert-content-title">
+                  <span class="badge badge-critico" style="margin-right: 4px">Validade</span>
+                  320 un de Lasanha Bolonhesa (LOT-2026-021) vencem em 5 dias
+                </div>
+                <div class="alert-content-desc">
+                  Data de Validade: 05/10/2026. Lote prioritário pela regra FEFO.
+                </div>
+              </div>
+              <div class="alert-action">
+                <button type="button" class="btn btn-secondary btn-sm js-resolve-alert">Resolver</button>
+              </div>
             </div>
-            <button type="button" class="botao sec peq acao">
-              Marcar como resolvido
-            </button>
-          </div>
-        </section>
+
+            <div class="alert-item atencao">
+              <div class="alert-content">
+                <div class="alert-content-title">
+                  <span class="badge badge-atencao" style="margin-right: 4px">Validade</span>
+                  100 un de Lasanha Bolonhesa (LOT-2026-024) vencem em 12 dias
+                </div>
+                <div class="alert-content-desc">
+                  Data de Validade: 12/10/2026. Segundo lote na fila de expedição.
+                </div>
+              </div>
+              <div class="alert-action">
+                <button type="button" class="btn btn-secondary btn-sm js-resolve-alert">Resolver</button>
+              </div>
+            </div>
+
+            <div class="alert-item atencao">
+              <div class="alert-content">
+                <div class="alert-content-title">
+                  <span class="badge badge-atencao" style="margin-right: 4px">Estoque</span>
+                  Strogonoff de Frango está abaixo do mínimo (40 de 60 un)
+                </div>
+                <div class="alert-content-desc">
+                  Saldo insuficiente para pedidos abertos.
+                </div>
+              </div>
+              <div class="alert-action">
+                <a href="producao.html" class="btn btn-primary btn-sm">Produzir</a>
+              </div>
+            </div>
+
+            <div class="alert-item atencao">
+              <div class="alert-content">
+                <div class="alert-content-title">
+                  <span class="badge badge-atencao" style="margin-right: 4px">Desperdício</span>
+                  Lasanha Bolonhesa: perdas 25% maiores que no mês anterior
+                </div>
+                <div class="alert-content-desc">
+                  145 un descartadas em setembro vs 116 un em agosto.
+                </div>
+              </div>
+              <div class="alert-action">
+                <button type="button" class="btn btn-secondary btn-sm js-resolve-alert">Resolver</button>
+              </div>
+            </div>
+
+            <div class="alert-item critico">
+              <div class="alert-content">
+                <div class="alert-content-title">
+                  <span class="badge badge-critico" style="margin-right: 4px">Pedido</span>
+                  Pedido 1005: Strogonoff de Frango 60 un, estoque disponível 40 un
+                </div>
+                <div class="alert-content-desc">
+                  Ruptura de atendimento para o cliente Mercado Central.
+                </div>
+              </div>
+              <div class="alert-action">
+                <a href="producao.html" class="btn btn-primary btn-sm">Programar</a>
+              </div>
+            </div>
+          </section>
+        </div>
       </main>
     </div>
+
+    <script src="../assets/js/main.js"></script>
   </body>
 </html>
-

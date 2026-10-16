@@ -2,139 +2,293 @@
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Lotes - FoodControl 4.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lotes & Validade - FoodControl</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <body>
-    <div class="app">
-      <nav class="menu" aria-label="Menu principal">
-        <div class="marca">
-          <img src="../assets/img/logo.png" alt="FoodControl 4.0" />
+    <div class="app-layout">
+      <!-- Sidebar com Logo Isolada -->
+      <aside class="app-sidebar" aria-label="Menu Principal">
+        <div class="sidebar-header">
+          <a href="dashboard.html" class="sidebar-brand-standalone" title="Página Inicial">
+            <img src="../assets/img/logo-white.png" alt="FoodControl" class="sidebar-logo-img" />
+          </a>
         </div>
-        <a href="dashboard.html">Dashboard</a
-        ><a href="produtos.html">Produtos</a
-        ><a href="lotes.html" class="ativo" aria-current="page">Lotes</a
-        ><a href="producao.html">Produção</a><a href="estoque.html">Estoque</a
-        ><a href="pedidos.html">Pedidos</a><a href="perdas.html">Perdas</a
-        ><a href="alertas.html">Alertas</a
-        ><a href="relatorios.html">Relatórios</a
-        ><a href="usuarios.html">Usuários</a>
-      </nav>
-      <main class="conteudo">
-        <header class="topo">
-          <div>
-            <h1>Lotes</h1>
-            <p>Validade e saldo de cada lote, com destaque automático</p>
+
+        <nav class="sidebar-nav">
+          <div class="nav-section">
+            <span class="nav-section-title">Visão Geral</span>
+            <a href="dashboard.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="9" rx="1"></rect><rect x="14" y="3" width="7" height="5" rx="1"></rect><rect x="14" y="12" width="7" height="9" rx="1"></rect><rect x="3" y="16" width="7" height="5" rx="1"></rect></svg>
+              <span>Dashboard</span>
+            </a>
           </div>
-          <div class="usuario">
-            <div class="foto">MD</div>
-            <div>Marina Duarte<small>Administrador</small></div>
-            <a class="sair" href="../index.html">Sair</a>
+
+          <div class="nav-section">
+            <span class="nav-section-title">Operação</span>
+            <a href="produtos.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+              <span>Produtos</span>
+            </a>
+            <a href="lotes.html" class="nav-link active" aria-current="page">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16.5 9.4 7.55 4.24a1.78 1.78 0 0 0-2.5 1.55v12.42a1.78 1.78 0 0 0 2.5 1.55L16.5 14.6a1.78 1.78 0 0 0 0-3.2z"></path><polyline points="18 4 18 20"></polyline></svg>
+              <span>Lotes & Validade</span>
+            </a>
+            <a href="producao.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              <span>Produção</span>
+            </a>
+            <a href="estoque.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+              <span>Estoque</span>
+            </a>
+          </div>
+
+          <div class="nav-section">
+            <span class="nav-section-title">Comercial</span>
+            <a href="pedidos.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+              <span>Pedidos</span>
+            </a>
+          </div>
+
+          <div class="nav-section">
+            <span class="nav-section-title">Qualidade</span>
+            <a href="perdas.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg>
+              <span>Perdas</span>
+            </a>
+            <a href="alertas.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              <span>Alertas</span>
+              <span class="nav-pill">5</span>
+            </a>
+          </div>
+
+          <div class="nav-section">
+            <span class="nav-section-title">Administração</span>
+            <a href="relatorios.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              <span>Relatórios</span>
+            </a>
+            <a href="usuarios.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              <span>Usuários & Acessos</span>
+            </a>
+          </div>
+        </nav>
+
+        <div class="sidebar-footer">
+          <span class="company-name">SaborSul Alimentos</span>
+          <a href="../index.html" class="sidebar-logout" title="Sair do sistema">Sair</a>
+        </div>
+      </aside>
+
+      <!-- Área de Conteúdo Principal -->
+      <main class="app-main">
+        <header class="app-header">
+          <div class="header-breadcrumbs">
+            <a href="dashboard.html">Início</a>
+            <span class="separator">/</span>
+            <span>Operação</span>
+            <span class="separator">/</span>
+            <span class="current">Lotes & Validade</span>
+          </div>
+
+          <div class="header-right">
+            <div class="operational-date-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <span>30/09/2026</span>
+            </div>
+
+            <a href="alertas.html" class="header-notification-btn" title="Central de Alertas">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              <span class="notification-count">5</span>
+            </a>
+
+            <div class="user-profile">
+              <div class="user-avatar">MD</div>
+              <div class="user-details">
+                <span class="user-name">Marina Duarte</span>
+                <span class="user-role">Administrador</span>
+              </div>
+            </div>
           </div>
         </header>
-        <section class="bloco">
-          <h2>Lotes</h2>
-          <div class="filtros">
-            <div>
-              <label for="fPesquisar">Pesquisar</label
-              ><input
-                id="fPesquisar"
-                type="search"
-                placeholder="Número do lote"
-              />
+
+        <div class="page-container">
+          <div class="page-header">
+            <div class="page-title-group">
+              <h1>Lotes em Estoque</h1>
+              <p>Lotes organizados por vencimento prioritário (regra FEFO: First Expired, First Out).</p>
             </div>
-            <div>
-              <label for="fProduto">Produto</label
-              ><select id="fProduto">
-                <option>Todos</option>
-                <option>Lasanha Bolonhesa</option>
-                <option>Pizza Calabresa</option>
-                <option>Pastel de Carne</option>
-              </select>
-            </div>
-            <div>
-              <label for="fSituação">Situação</label
-              ><select id="fSituação">
-                <option>Todas</option>
-                <option>Normal</option>
-                <option>Atenção</option>
-                <option>Crítico</option>
-                <option>Vencido</option>
-              </select>
+            <div class="page-actions">
+              <a href="producao.html" class="btn btn-primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <span>Nova Produção</span>
+              </a>
             </div>
           </div>
-          <div class="tabela">
-            <table>
-              <thead>
-                <tr>
-                  <th>Lote</th>
-                  <th>Produto</th>
-                  <th>Produção</th>
-                  <th>Validade</th>
-                  <th class="num">Saldo</th>
-                  <th>Situação</th>
-                  <th>Ações</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>LOT-2026-021</td>
-                  <td>Lasanha Bolonhesa</td>
-                  <td>07/07/2026</td>
-                  <td>05/10/2026</td>
-                  <td class="num">320</td>
-                  <td><span class="selo critico">Crítico: 5 dias</span></td>
-                  <td><a class="botao sec peq" href="#">Bloquear</a></td>
-                </tr>
-                <tr>
-                  <td>LOT-2026-024</td>
-                  <td>Lasanha Bolonhesa</td>
-                  <td>14/07/2026</td>
-                  <td>12/10/2026</td>
-                  <td class="num">100</td>
-                  <td><span class="selo atencao">Atenção: 12 dias</span></td>
-                  <td><a class="botao sec peq" href="#">Bloquear</a></td>
-                </tr>
-                <tr>
-                  <td>LOT-2026-030</td>
-                  <td>Pastel de Carne</td>
-                  <td>01/08/2026</td>
-                  <td>29/09/2026</td>
-                  <td class="num">60</td>
-                  <td><span class="selo critico">Vencido</span></td>
-                  <td>
-                    <a class="botao peq" href="perdas.html">Registrar perda</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>LOT-2026-043</td>
-                  <td>Lasanha Bolonhesa</td>
-                  <td>25/09/2026</td>
-                  <td>24/12/2026</td>
-                  <td class="num">580</td>
-                  <td><span class="selo">Normal</span></td>
-                  <td><a class="botao sec peq" href="#">Bloquear</a></td>
-                </tr>
-                <tr>
-                  <td>LOT-2026-039</td>
-                  <td>Pizza Calabresa</td>
-                  <td>15/09/2026</td>
-                  <td>13/01/2027</td>
-                  <td class="num">100</td>
-                  <td><span class="selo">Normal</span></td>
-                  <td><a class="botao sec peq" href="#">Bloquear</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="rodape">
-            Os lotes são criados na tela Produção, junto com a entrada no
-            estoque.
-          </p>
-        </section>
+
+          <!-- Tabela com Filtros Diretos (Sem cards e sem banners redundantes) -->
+          <section class="card-panel">
+            <div class="filter-bar">
+              <div class="filter-group" style="flex: 1; min-width: 220px">
+                <label for="tableSearchInput">Pesquisar Lote ou Produto</label>
+                <input type="search" id="tableSearchInput" class="input-control" placeholder="Buscar por LOT-2026-... ou alimento" />
+              </div>
+
+              <div class="filter-group">
+                <label for="tableCategoryFilter">Produto</label>
+                <select id="tableCategoryFilter" class="select-control">
+                  <option value="todas">Todos os Produtos</option>
+                  <option value="lasanha">Lasanha Bolonhesa</option>
+                  <option value="pizza">Pizza Calabresa</option>
+                  <option value="pastel">Pastel de Carne</option>
+                  <option value="coxinha">Coxinha de Frango</option>
+                  <option value="strogonoff">Strogonoff de Frango</option>
+                  <option value="massa">Massa Tagliatelle</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <label for="tableStatusFilter">Situação de Validade</label>
+                <select id="tableStatusFilter" class="select-control">
+                  <option value="todos">Todas</option>
+                  <option value="crítico">Crítico (≤ 7 dias)</option>
+                  <option value="atenção">Atenção (8 a 15 dias)</option>
+                  <option value="vencido">Vencido</option>
+                  <option value="normal">Normal (> 15 dias)</option>
+                </select>
+              </div>
+
+              <div style="margin-left: auto; align-self: flex-end; padding-bottom: 6px">
+                <span id="tableRowCount" style="font-size: 12px; color: var(--text-muted); font-weight: 600">8 lotes em câmara</span>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Lote</th>
+                    <th>Produto</th>
+                    <th>Produção</th>
+                    <th>Validade</th>
+                    <th class="num">Saldo</th>
+                    <th>Situação FEFO</th>
+                    <th style="text-align: right">Ação</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Lote Vencido -->
+                  <tr style="background-color: #fffafa">
+                    <td><span class="cell-primary" style="font-family: monospace">LOT-2026-030</span></td>
+                    <td>Pastel de Carne</td>
+                    <td>01/08/2026</td>
+                    <td style="color: var(--status-critico-text); font-weight: 600">29/09/2026</td>
+                    <td class="num font-semibold">60 un</td>
+                    <td><span class="badge badge-critico"><span class="badge-dot"></span>Vencido</span></td>
+                    <td style="text-align: right">
+                      <a href="perdas.html" class="btn btn-danger-outline btn-sm">Dar Baixa</a>
+                    </td>
+                  </tr>
+
+                  <!-- Lote Crítico (5 dias) -->
+                  <tr>
+                    <td><span class="cell-primary" style="font-family: monospace">LOT-2026-021</span></td>
+                    <td>Lasanha Bolonhesa</td>
+                    <td>07/07/2026</td>
+                    <td style="color: var(--status-critico-text); font-weight: 600">05/10/2026</td>
+                    <td class="num font-semibold">320 un</td>
+                    <td><span class="badge badge-critico"><span class="badge-dot"></span>Crítico (5 dias)</span></td>
+                    <td style="text-align: right">
+                      <button type="button" class="btn btn-secondary btn-sm js-block-batch">Bloquear</button>
+                    </td>
+                  </tr>
+
+                  <!-- Lote Atenção (12 dias) -->
+                  <tr>
+                    <td><span class="cell-primary" style="font-family: monospace">LOT-2026-024</span></td>
+                    <td>Lasanha Bolonhesa</td>
+                    <td>14/07/2026</td>
+                    <td style="color: var(--status-atencao-text); font-weight: 600">12/10/2026</td>
+                    <td class="num font-semibold">100 un</td>
+                    <td><span class="badge badge-atencao"><span class="badge-dot"></span>Atenção (12 dias)</span></td>
+                    <td style="text-align: right">
+                      <button type="button" class="btn btn-secondary btn-sm js-block-batch">Bloquear</button>
+                    </td>
+                  </tr>
+
+                  <!-- Lotes Normais -->
+                  <tr>
+                    <td><span class="cell-primary" style="font-family: monospace">LOT-2026-036</span></td>
+                    <td>Strogonoff de Frango</td>
+                    <td>10/09/2026</td>
+                    <td>25/10/2026</td>
+                    <td class="num font-semibold">40 un</td>
+                    <td><span class="badge badge-normal"><span class="badge-dot"></span>Normal (25 dias)</span></td>
+                    <td style="text-align: right">
+                      <button type="button" class="btn btn-secondary btn-sm js-block-batch">Bloquear</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><span class="cell-primary" style="font-family: monospace">LOT-2026-041</span></td>
+                    <td>Pastel de Carne</td>
+                    <td>20/09/2026</td>
+                    <td>19/11/2026</td>
+                    <td class="num font-semibold">500 un</td>
+                    <td><span class="badge badge-normal"><span class="badge-dot"></span>Normal</span></td>
+                    <td style="text-align: right">
+                      <button type="button" class="btn btn-secondary btn-sm js-block-batch">Bloquear</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><span class="cell-primary" style="font-family: monospace">LOT-2026-043</span></td>
+                    <td>Lasanha Bolonhesa</td>
+                    <td>25/09/2026</td>
+                    <td>24/12/2026</td>
+                    <td class="num font-semibold">580 un</td>
+                    <td><span class="badge badge-normal"><span class="badge-dot"></span>Normal</span></td>
+                    <td style="text-align: right">
+                      <button type="button" class="btn btn-secondary btn-sm js-block-batch">Bloquear</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><span class="cell-primary" style="font-family: monospace">LOT-2026-042</span></td>
+                    <td>Coxinha de Frango</td>
+                    <td>22/09/2026</td>
+                    <td>21/12/2026</td>
+                    <td class="num font-semibold">900 un</td>
+                    <td><span class="badge badge-normal"><span class="badge-dot"></span>Normal</span></td>
+                    <td style="text-align: right">
+                      <button type="button" class="btn btn-secondary btn-sm js-block-batch">Bloquear</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><span class="cell-primary" style="font-family: monospace">LOT-2026-039</span></td>
+                    <td>Pizza Calabresa</td>
+                    <td>15/09/2026</td>
+                    <td>13/01/2027</td>
+                    <td class="num font-semibold">100 un</td>
+                    <td><span class="badge badge-normal"><span class="badge-dot"></span>Normal</span></td>
+                    <td style="text-align: right">
+                      <button type="button" class="btn btn-secondary btn-sm js-block-batch">Bloquear</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
       </main>
     </div>
+
+    <script src="../assets/js/main.js"></script>
   </body>
 </html>
-

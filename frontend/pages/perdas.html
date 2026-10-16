@@ -2,140 +2,274 @@
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Perdas - FoodControl 4.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Perdas - FoodControl</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <body>
-    <div class="app">
-      <nav class="menu" aria-label="Menu principal">
-        <div class="marca">
-          <img src="../assets/img/logo.png" alt="FoodControl 4.0" />
+    <div class="app-layout">
+      <!-- Sidebar com Logo Isolada -->
+      <aside class="app-sidebar" aria-label="Menu Principal">
+        <div class="sidebar-header">
+          <a href="dashboard.html" class="sidebar-brand-standalone" title="Página Inicial">
+            <img src="../assets/img/logo-white.png" alt="FoodControl" class="sidebar-logo-img" />
+          </a>
         </div>
-        <a href="dashboard.html">Dashboard</a
-        ><a href="produtos.html">Produtos</a><a href="lotes.html">Lotes</a
-        ><a href="producao.html">Produção</a><a href="estoque.html">Estoque</a
-        ><a href="pedidos.html">Pedidos</a
-        ><a href="perdas.html" class="ativo" aria-current="page">Perdas</a
-        ><a href="alertas.html">Alertas</a
-        ><a href="relatorios.html">Relatórios</a
-        ><a href="usuarios.html">Usuários</a>
-      </nav>
-      <main class="conteudo">
-        <header class="topo">
-          <div>
-            <h1>Perdas</h1>
-            <p>Registre os desperdícios e acompanhe o motivo</p>
+
+        <nav class="sidebar-nav">
+          <div class="nav-section">
+            <span class="nav-section-title">Visão Geral</span>
+            <a href="dashboard.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="9" rx="1"></rect><rect x="14" y="3" width="7" height="5" rx="1"></rect><rect x="14" y="12" width="7" height="9" rx="1"></rect><rect x="3" y="16" width="7" height="5" rx="1"></rect></svg>
+              <span>Dashboard</span>
+            </a>
           </div>
-          <div class="usuario">
-            <div class="foto">MD</div>
-            <div>Marina Duarte<small>Administrador</small></div>
-            <a class="sair" href="../index.html">Sair</a>
+
+          <div class="nav-section">
+            <span class="nav-section-title">Operação</span>
+            <a href="produtos.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+              <span>Produtos</span>
+            </a>
+            <a href="lotes.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16.5 9.4 7.55 4.24a1.78 1.78 0 0 0-2.5 1.55v12.42a1.78 1.78 0 0 0 2.5 1.55L16.5 14.6a1.78 1.78 0 0 0 0-3.2z"></path><polyline points="18 4 18 20"></polyline></svg>
+              <span>Lotes & Validade</span>
+            </a>
+            <a href="producao.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              <span>Produção</span>
+            </a>
+            <a href="estoque.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+              <span>Estoque</span>
+            </a>
+          </div>
+
+          <div class="nav-section">
+            <span class="nav-section-title">Comercial</span>
+            <a href="pedidos.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+              <span>Pedidos</span>
+            </a>
+          </div>
+
+          <div class="nav-section">
+            <span class="nav-section-title">Qualidade</span>
+            <a href="perdas.html" class="nav-link active" aria-current="page">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg>
+              <span>Perdas</span>
+            </a>
+            <a href="alertas.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              <span>Alertas</span>
+              <span class="nav-pill">5</span>
+            </a>
+          </div>
+
+          <div class="nav-section">
+            <span class="nav-section-title">Administração</span>
+            <a href="relatorios.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              <span>Relatórios</span>
+            </a>
+            <a href="usuarios.html" class="nav-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              <span>Usuários & Acessos</span>
+            </a>
+          </div>
+        </nav>
+
+        <div class="sidebar-footer">
+          <span class="company-name">SaborSul Alimentos</span>
+          <a href="../index.html" class="sidebar-logout" title="Sair do sistema">Sair</a>
+        </div>
+      </aside>
+
+      <!-- Área de Conteúdo Principal -->
+      <main class="app-main">
+        <header class="app-header">
+          <div class="header-breadcrumbs">
+            <a href="dashboard.html">Início</a>
+            <span class="separator">/</span>
+            <span>Qualidade</span>
+            <span class="separator">/</span>
+            <span class="current">Perdas</span>
+          </div>
+
+          <div class="header-right">
+            <div class="operational-date-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <span>30/09/2026</span>
+            </div>
+
+            <a href="alertas.html" class="header-notification-btn" title="Central de Alertas">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              <span class="notification-count">5</span>
+            </a>
+
+            <div class="user-profile">
+              <div class="user-avatar">AS</div>
+              <div class="user-details">
+                <span class="user-name">Ana Paula Souza</span>
+                <span class="user-role">Qualidade</span>
+              </div>
+            </div>
           </div>
         </header>
-        <div class="grade g2">
-          <section class="bloco">
-            <h2>Registrar perda</h2>
-            <form class="formulario">
-              <div class="campo">
-                <label for="Produto">Produto</label
-                ><select id="Produto">
-                  <option>Lasanha Bolonhesa</option>
-                  <option>Pizza Calabresa</option>
-                  <option>Pastel de Carne</option>
-                </select>
-              </div>
-              <div class="campo">
-                <label for="Lote">Lote</label
-                ><select id="Lote">
-                  <option>LOT-2026-043</option>
-                  <option>LOT-2026-021</option>
-                  <option>Sem lote</option>
-                </select>
-              </div>
-              <div class="campo">
-                <label for="Quantidade">Quantidade</label
-                ><input id="Quantidade" type="number" placeholder="" />
-              </div>
-              <div class="campo">
-                <label for="Motivo">Motivo</label
-                ><select id="Motivo">
-                  <option>Validade</option>
-                  <option>Embalagem danificada</option>
-                  <option>Erro de produção</option>
-                  <option>Armazenamento inadequado</option>
-                  <option>Produto fora do padrão</option>
-                  <option>Outros</option>
-                </select>
-              </div>
-              <div class="campo">
-                <label for="Valor estimado">Valor estimado</label
-                ><input id="Valor estimado" type="text" placeholder="R$ 0,00" />
-              </div>
-              <div class="campo">
-                <label for="Data">Data</label
-                ><input id="Data" type="date" placeholder="" />
-              </div>
-              <div class="botoes largo">
-                <button class="botao" type="button">Registrar perda</button
-                ><button class="botao sec" type="reset">Limpar</button>
-              </div>
-            </form>
-          </section>
-          <section class="bloco">
-            <h2>Perdas recentes</h2>
-            <div class="tabela">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Data</th>
-                    <th>Produto</th>
-                    <th>Lote</th>
-                    <th class="num">Qtd.</th>
-                    <th>Motivo</th>
-                    <th class="num">Valor</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>28/09</td>
-                    <td>Lasanha Bolonhesa</td>
-                    <td>LOT-2026-043</td>
-                    <td class="num">20</td>
-                    <td>Armazenamento inadequado</td>
-                    <td class="num">R$ 250,00</td>
-                  </tr>
-                  <tr>
-                    <td>27/09</td>
-                    <td>Coxinha de Frango</td>
-                    <td>LOT-2026-042</td>
-                    <td class="num">30</td>
-                    <td>Produto fora do padrão</td>
-                    <td class="num">R$ 270,00</td>
-                  </tr>
-                  <tr>
-                    <td>26/09</td>
-                    <td>Pizza Calabresa</td>
-                    <td>LOT-2026-039</td>
-                    <td class="num">35</td>
-                    <td>Armazenamento inadequado</td>
-                    <td class="num">R$ 630,00</td>
-                  </tr>
-                  <tr>
-                    <td>25/09</td>
-                    <td>Pastel de Carne</td>
-                    <td>LOT-2026-041</td>
-                    <td class="num">25</td>
-                    <td>Embalagem danificada</td>
-                    <td class="num">R$ 162,50</td>
-                  </tr>
-                </tbody>
-              </table>
+
+        <div class="page-container">
+          <div class="page-header">
+            <div class="page-title-group">
+              <h1>Apontamento de Perdas</h1>
+              <p>Registre descartes com motivo e cálculo automático do prejuízo.</p>
             </div>
-          </section>
+          </div>
+
+          <div class="grid grid-cols-12">
+            <!-- Formulário de Perda (5 colunas) -->
+            <section class="card-panel col-span-5">
+              <div class="panel-header">
+                <div class="panel-title">
+                  <h2>Registrar Ocorrência</h2>
+                </div>
+              </div>
+
+              <form onsubmit="event.preventDefault(); showToast('Perda apontada e saldo deduzido do lote.', 'warning');">
+                <div class="form-grid">
+                  <div class="form-group full-width">
+                    <label for="lossProduto">Produto</label>
+                    <select id="lossProduto" class="select-control" required onchange="calcularValorPerda()">
+                      <option value="12.5" selected>Lasanha Bolonhesa (R$ 12,50/un)</option>
+                      <option value="18.0">Pizza Calabresa (R$ 18,00/un)</option>
+                      <option value="6.5">Pastel de Carne (R$ 6,50/un)</option>
+                      <option value="9.0">Coxinha de Frango (R$ 9,00/un)</option>
+                      <option value="15.0">Strogonoff de Frango (R$ 15,00/un)</option>
+                      <option value="7.5">Massa Tagliatelle (R$ 7,50/un)</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group full-width">
+                    <label for="lossLote">Lote</label>
+                    <select id="lossLote" class="select-control" required>
+                      <option>LOT-2026-030 (Pastel - Vencido 60 un)</option>
+                      <option>LOT-2026-043 (Lasanha)</option>
+                      <option>LOT-2026-021 (Lasanha)</option>
+                      <option>Sem lote (Avulso)</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="lossQtd">Quantidade</label>
+                    <input id="lossQtd" type="number" class="input-control" required value="20" min="1" oninput="calcularValorPerda()" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="lossValor">Valor Calculado</label>
+                    <input id="lossValor" type="text" class="input-control" readonly value="R$ 250,00" style="background-color: var(--bg-surface-alt); font-weight: 700; color: var(--petroleo-800)" />
+                  </div>
+
+                  <div class="form-group full-width">
+                    <label for="lossMotivo">Motivo</label>
+                    <select id="lossMotivo" class="select-control" required>
+                      <option>Validade</option>
+                      <option>Embalagem danificada</option>
+                      <option>Armazenamento inadequado</option>
+                      <option>Produto fora do padrão</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group full-width">
+                    <label for="lossData">Data</label>
+                    <input id="lossData" type="date" class="input-control" required value="2026-09-30" />
+                  </div>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border-subtle)">
+                  <button type="reset" class="btn btn-secondary">Limpar</button>
+                  <button type="submit" class="btn btn-primary" style="background-color: #dc2626; border-color: #dc2626">Registrar Perda</button>
+                </div>
+              </form>
+            </section>
+
+            <!-- Tabela de Ocorrências Recentes (7 colunas) -->
+            <section class="card-panel col-span-7">
+              <div class="panel-header">
+                <div class="panel-title">
+                  <h2>Ocorrências de Setembro</h2>
+                </div>
+                <span style="font-size: 13px; font-weight: 700; color: var(--status-critico-text)">Total: R$ 3.415,00</span>
+              </div>
+
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Data</th>
+                      <th>Produto</th>
+                      <th>Lote</th>
+                      <th class="num">Qtd.</th>
+                      <th>Motivo</th>
+                      <th class="num">Valor</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>28/09</td>
+                      <td>Lasanha Bolonhesa</td>
+                      <td><span style="font-family: monospace">LOT-2026-043</span></td>
+                      <td class="num font-semibold">20 un</td>
+                      <td>Armazenamento inadequado</td>
+                      <td class="num font-semibold" style="color: var(--status-critico-text)">R$ 250,00</td>
+                    </tr>
+                    <tr>
+                      <td>27/09</td>
+                      <td>Coxinha de Frango</td>
+                      <td><span style="font-family: monospace">LOT-2026-042</span></td>
+                      <td class="num font-semibold">30 un</td>
+                      <td>Produto fora do padrão</td>
+                      <td class="num font-semibold" style="color: var(--status-critico-text)">R$ 270,00</td>
+                    </tr>
+                    <tr>
+                      <td>26/09</td>
+                      <td>Pizza Calabresa</td>
+                      <td><span style="font-family: monospace">LOT-2026-039</span></td>
+                      <td class="num font-semibold">35 un</td>
+                      <td>Armazenamento inadequado</td>
+                      <td class="num font-semibold" style="color: var(--status-critico-text)">R$ 630,00</td>
+                    </tr>
+                    <tr>
+                      <td>25/09</td>
+                      <td>Pastel de Carne</td>
+                      <td><span style="font-family: monospace">LOT-2026-041</span></td>
+                      <td class="num font-semibold">25 un</td>
+                      <td>Embalagem danificada</td>
+                      <td class="num font-semibold" style="color: var(--status-critico-text)">R$ 162,50</td>
+                    </tr>
+                    <tr>
+                      <td>19/09</td>
+                      <td>Lasanha Bolonhesa</td>
+                      <td><span style="font-family: monospace">LOT-2026-018</span></td>
+                      <td class="num font-semibold">80 un</td>
+                      <td>Validade</td>
+                      <td class="num font-semibold" style="color: var(--status-critico-text)">R$ 1.000,00</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
         </div>
       </main>
     </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+      function calcularValorPerda() {
+        const preco = parseFloat(document.getElementById('lossProduto').value) || 0;
+        const qtd = parseInt(document.getElementById('lossQtd').value) || 0;
+        const total = preco * qtd;
+        document.getElementById('lossValor').value = 'R$ ' + total.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      }
+    </script>
   </body>
 </html>
-
