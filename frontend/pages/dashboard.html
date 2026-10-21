@@ -12,7 +12,7 @@
       <aside class="app-sidebar" aria-label="Menu Principal">
         <div class="sidebar-header">
           <a href="dashboard.html" class="sidebar-brand-standalone" title="Página Inicial">
-            <img src="../assets/img/logo-white.png" alt="FoodControl" class="sidebar-logo-img" />
+            <img src="../assets/img/logo-side.png" alt="FoodControl" class="sidebar-logo-img logo-side" />
           </a>
         </div>
 
@@ -129,177 +129,208 @@
             </div>
           </div>
 
-          <!-- Grade dos 8 Indicadores Oficiais (Seção 14 do Dossiê) -->
+          <!-- 4 KPIs de Comando Executivo (Consolidados e de Alto Impacto) -->
           <div class="grid grid-cols-4" style="margin-bottom: 22px">
             <div class="kpi-card status-normal">
               <div class="kpi-header">
-                <span class="kpi-label">Estoque Total</span>
+                <span class="kpi-label">Estoque Total Rastreado</span>
+                <span class="badge badge-normal">8 Lotes Ativos</span>
               </div>
               <div class="kpi-value-row">
                 <span class="kpi-value">2.690</span>
                 <span style="font-size: 13px; color: var(--text-secondary)">unidades</span>
               </div>
-              <span class="kpi-subtext">Lotes disponíveis em câmara</span>
-            </div>
-
-            <div class="kpi-card status-atencao">
-              <div class="kpi-header">
-                <span class="kpi-label">Próximos da Validade</span>
-                <span class="badge badge-atencao">≤ 15 dias</span>
-              </div>
-              <div class="kpi-value-row">
-                <span class="kpi-value">2 lotes</span>
-              </div>
-              <span class="kpi-subtext">420 un (Requer prioridade FEFO)</span>
+              <span class="kpi-subtext">Distribuídos em 3 Câmaras Frias</span>
             </div>
 
             <div class="kpi-card status-critico">
               <div class="kpi-header">
-                <span class="kpi-label">Vencidos com Saldo</span>
-                <span class="badge badge-critico">Ação Urgente</span>
+                <span class="kpi-label">Capital em Risco FEFO (≤ 30d)</span>
+                <span class="badge badge-critico">Prioridade Alta</span>
               </div>
               <div class="kpi-value-row">
-                <span class="kpi-value">1 lote</span>
+                <span class="kpi-value" style="color: var(--status-critico-text)">R$ 5.850,00</span>
               </div>
-              <span class="kpi-subtext">60 un (LOT-2026-030 Pastel)</span>
-            </div>
-
-            <div class="kpi-card status-critico">
-              <div class="kpi-header">
-                <span class="kpi-label">Perdas no Mês</span>
-              </div>
-              <div class="kpi-value-row">
-                <span class="kpi-value">R$ 3.415,00</span>
-              </div>
-              <span class="kpi-subtext">265 unidades descartadas</span>
+              <span class="kpi-subtext">R$ 4.000,00 vencem em 5 dias (LOT-021)</span>
             </div>
 
             <div class="kpi-card status-info">
               <div class="kpi-header">
-                <span class="kpi-label">Pedidos Pendentes</span>
+                <span class="kpi-label">Taxa de Aproveitamento FEFO</span>
+                <span class="badge badge-info">Eficiência 4.0</span>
               </div>
               <div class="kpi-value-row">
-                <span class="kpi-value">6 pedidos</span>
+                <span class="kpi-value">94,2%</span>
               </div>
-              <span class="kpi-subtext">Demanda de R$ 21.275,00</span>
-            </div>
-
-            <div class="kpi-card status-atencao">
-              <div class="kpi-header">
-                <span class="kpi-label">Abaixo do Mínimo</span>
-              </div>
-              <div class="kpi-value-row">
-                <span class="kpi-value">1 produto</span>
-              </div>
-              <span class="kpi-subtext">Strogonoff de Frango (40 de 60)</span>
+              <span class="kpi-subtext">Mitigação ativa de descarte por validade</span>
             </div>
 
             <div class="kpi-card status-normal">
               <div class="kpi-header">
                 <span class="kpi-label">Produção do Mês</span>
-                <span class="badge badge-normal">99,5% meta</span>
+                <span class="badge badge-normal">99,5% da meta</span>
               </div>
               <div class="kpi-value-row">
                 <span class="kpi-value">4.030 un</span>
               </div>
-              <span class="kpi-subtext">Meta: 4.050 un</span>
-            </div>
-
-            <div class="kpi-card status-critico">
-              <div class="kpi-header">
-                <span class="kpi-label">Produtos em Risco Alto</span>
-              </div>
-              <div class="kpi-value-row">
-                <span class="kpi-value">1 produto</span>
-              </div>
-              <span class="kpi-subtext">Lasanha Bolonhesa (Índice 49,6)</span>
+              <span class="kpi-subtext">Meta mensal: 4.050 unidades</span>
             </div>
           </div>
 
-          <!-- Grade 2 Colunas: Alertas Abertos e Distribuição de Perdas -->
+          <!-- ========================================================
+               HERO: Linha do Tempo FEFO com Clustering & Ações Imediatas
+               ======================================================== -->
+          <section class="fefo-timeline-card card-panel" aria-label="Linha do Tempo FEFO">
+            <!-- Cabeçalho Limpo: Título e Filtro de Câmaras Integrado -->
+            <div class="fefo-timeline-header">
+              <div class="fefo-header-titles">
+                <h2>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--petroleo-700)">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <polyline points="15 6 21 12 15 18"></polyline>
+                    <circle cx="3" cy="12" r="2"></circle>
+                  </svg>
+                  Linha do Tempo FEFO
+                </h2>
+                <p>Distribuição cronológica de lotes por proximidade de validade.</p>
+              </div>
+
+              <!-- Filtro de Câmaras Direto no Topo -->
+              <div class="fefo-filters">
+                <button type="button" class="fefo-filter-btn active" data-filter="todos">Todas as Câmaras</button>
+                <button type="button" class="fefo-filter-btn" data-filter="camara-a">A · Congelados</button>
+                <button type="button" class="fefo-filter-btn" data-filter="camara-b">B · Resfriados</button>
+                <button type="button" class="fefo-filter-btn" data-filter="camara-c">C · Secos</button>
+              </div>
+            </div>
+
+            <!-- Visualização Linear Full-Width da Linha do Tempo (Trilha Contínua Integrada) -->
+            <div class="fefo-timeline-visual">
+              <div class="timeline-track-wrapper">
+                
+                <!-- Linha Principal: Marco Hoje + Trilha Contínua Integrada -->
+                <div class="fefo-continuous-track-row">
+                  <!-- Marco Hoje: Bloco Sólido de Origem -->
+                  <div class="timeline-today-block">
+                    <div class="today-pulse-dot"></div>
+                    <span class="today-title-label">Hoje</span>
+                    <span class="today-date-text">30/09</span>
+                  </div>
+
+                  <!-- A Trilha Contínua Integrada (Barra Sólida em 3 Faixas) -->
+                  <div class="fefo-solid-track">
+                    
+                    <!-- FAIXA 1: CRÍTICO (≤ 7 dias) -->
+                    <div class="track-segment segment-critical">
+                      <div class="segment-header">
+                        <span class="segment-pill pill-critical">≤ 7 dias</span>
+                      </div>
+                      <div class="segment-body">
+                        <div class="timeline-lot-node solid-lot-card" data-lot="LOT-2026-021" data-chamber="camara-a" tabindex="0" role="button" aria-haspopup="true" aria-label="Lote LOT-2026-021 Lasanha Bolonhesa">
+                          <div class="solid-card-top">
+                            <span class="solid-card-code">LOT-2026-021</span>
+                            <span class="solid-card-expire-tag">5 dias</span>
+                          </div>
+                          <div class="solid-card-name">Lasanha Bolonhesa</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- FAIXA 2: ATENÇÃO (8 a 30 dias) -->
+                    <div class="track-segment segment-warning">
+                      <div class="segment-header">
+                        <span class="segment-pill pill-warning">8 – 30 dias</span>
+                      </div>
+                      <div class="segment-body">
+                        <div class="timeline-cluster-node solid-cluster-card cluster-warning" data-cluster="warning" tabindex="0" role="button" aria-haspopup="true" aria-label="Cluster de 2 lotes em atenção">
+                          <div class="cluster-depth-shadow"></div>
+                          <div class="solid-cluster-inner">
+                            <div class="solid-card-top">
+                              <span class="cluster-badge-count">2 Lotes</span>
+                              <svg class="cluster-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </div>
+                            <div class="solid-cluster-preview">Lasanha · Strogonoff</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- FAIXA 3: REGULAR (> 30 dias) -->
+                    <div class="track-segment segment-regular">
+                      <div class="segment-header">
+                        <span class="segment-pill pill-regular">&gt; 30 dias</span>
+                      </div>
+                      <div class="segment-body">
+                        <div class="timeline-cluster-node solid-cluster-card cluster-regular" data-cluster="regular" tabindex="0" role="button" aria-haspopup="true" aria-label="Cluster de 4 lotes regulares">
+                          <div class="cluster-depth-shadow multi"></div>
+                          <div class="solid-cluster-inner">
+                            <div class="solid-card-top">
+                              <span class="cluster-badge-count">4 Lotes</span>
+                              <svg class="cluster-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </div>
+                            <div class="solid-cluster-preview">Pastel · Coxinha · Pizza · Lasanha</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- Régua Cronológica Inferior Sólida -->
+                <div class="fefo-solid-ruler">
+                  <div class="ruler-point active-zero">
+                    <div class="ruler-tick-mark"></div>
+                    <span>Hoje</span>
+                  </div>
+                  <div class="ruler-point">
+                    <div class="ruler-tick-mark"></div>
+                    <span>7d</span>
+                  </div>
+                  <div class="ruler-point">
+                    <div class="ruler-tick-mark"></div>
+                    <span>15d</span>
+                  </div>
+                  <div class="ruler-point">
+                    <div class="ruler-tick-mark"></div>
+                    <span>30d</span>
+                  </div>
+                  <div class="ruler-point">
+                    <div class="ruler-tick-mark"></div>
+                    <span>60d</span>
+                  </div>
+                  <div class="ruler-point">
+                    <div class="ruler-tick-mark"></div>
+                    <span>90d+</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Popover Sobreposto Interativo (com CTAs operacionais e auto-dismiss) -->
+              <div class="fefo-cluster-popover" id="fefoClusterPopover">
+                <div class="popover-header">
+                  <div class="popover-title-wrap">
+                    <span class="popover-title" id="popoverTitle">Lotes Agrupados</span>
+                    <span class="popover-subtitle" id="popoverSubtitle"></span>
+                  </div>
+                  <button type="button" class="popover-close-btn" id="popoverCloseBtn" aria-label="Fechar">&times;</button>
+                </div>
+                <div class="popover-body" id="popoverBody">
+                  <!-- Injetado dinamicamente com dados e CTAs correspondentes -->
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Grade 2 Colunas: Desperdício por Linha e Telemetria de Câmaras Frias -->
           <div class="grid grid-cols-12" style="margin-bottom: 22px">
-            <!-- Painel de Alertas Prioritários (7 colunas) -->
-            <section class="card-panel col-span-7">
-              <div class="panel-header">
-                <div class="panel-title">
-                  <h2>Alertas Críticos</h2>
-                  <span class="panel-badge">5 abertos</span>
-                </div>
-                <a href="alertas.html" class="panel-action">Ver todos</a>
-              </div>
-
-              <!-- Alerta 1 -->
-              <div class="alert-item critico">
-                <div class="alert-content">
-                  <div class="alert-content-title">
-                    <span class="badge badge-critico" style="margin-right: 4px">Validade</span>
-                    320 un de Lasanha vencem em 5 dias
-                  </div>
-                  <div class="alert-content-desc">
-                    Lote LOT-2026-021 (05/10/2026). R$ 4.000,00 em risco. Priorizar expedição nos pedidos em aberto.
-                  </div>
-                </div>
-                <div class="alert-action">
-                  <button type="button" class="btn btn-secondary btn-sm js-resolve-alert">Resolver</button>
-                </div>
-              </div>
-
-              <!-- Alerta 2 -->
-              <div class="alert-item critico">
-                <div class="alert-content">
-                  <div class="alert-content-title">
-                    <span class="badge badge-critico" style="margin-right: 4px">Vencido</span>
-                    LOT-2026-030 (Pastel de Carne) venceu com 60 un
-                  </div>
-                  <div class="alert-content-desc">
-                    Venceu em 29/09/2026. Lote bloqueado para expedição.
-                  </div>
-                </div>
-                <div class="alert-action">
-                  <a href="perdas.html" class="btn btn-danger-outline btn-sm">Dar Baixa</a>
-                </div>
-              </div>
-
-              <!-- Alerta 3 -->
-              <div class="alert-item atencao">
-                <div class="alert-content">
-                  <div class="alert-content-title">
-                    <span class="badge badge-atencao" style="margin-right: 4px">Estoque</span>
-                    Strogonoff de Frango abaixo do mínimo
-                  </div>
-                  <div class="alert-content-desc">
-                    Saldo disponível de 40 un (mínimo: 60 un).
-                  </div>
-                </div>
-                <div class="alert-action">
-                  <a href="producao.html" class="btn btn-primary btn-sm">Produzir</a>
-                </div>
-              </div>
-
-              <!-- Alerta 4 -->
-              <div class="alert-item atencao">
-                <div class="alert-content">
-                  <div class="alert-content-title">
-                    <span class="badge badge-atencao" style="margin-right: 4px">Perdas</span>
-                    Pizza: perda crescente nos últimos 3 lotes
-                  </div>
-                  <div class="alert-content-desc">
-                    Índices de 2,2% → 4,2% → 7,0% em setembro.
-                  </div>
-                </div>
-                <div class="alert-action">
-                  <button type="button" class="btn btn-secondary btn-sm js-resolve-alert">Resolver</button>
-                </div>
-              </div>
-            </section>
-
-            <!-- Painel de Desperdício por Linha de Produto (5 colunas) -->
-            <section class="card-panel col-span-5">
+            <!-- Painel de Desperdício por Linha de Produto (6 colunas) -->
+            <section class="card-panel col-span-6">
               <div class="panel-header">
                 <div class="panel-title">
                   <h2>Perdas por Produto (Setembro)</h2>
                 </div>
-                <span style="font-size: 13px; font-weight: 700; color: var(--petroleo-800)">R$ 3.415,00</span>
+                <span style="font-size: 13px; font-weight: 700; color: var(--petroleo-800)">R$ 3.415,00 descartados</span>
               </div>
 
               <div class="progress-container">
@@ -343,7 +374,59 @@
               </div>
 
               <div style="margin-top: auto; padding-top: 12px; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border-subtle)">
-                A expedição via FEFO nos pedidos pendentes evita a perda dos lotes antigos.
+                A expedição via FEFO nos pedidos pendentes evita novas perdas de lotes.
+              </div>
+            </section>
+
+            <!-- Painel de Telemetria de Câmaras Frias (6 colunas) -->
+            <section class="card-panel col-span-6">
+              <div class="panel-header">
+                <div class="panel-title">
+                  <h2>Cadeia de Frio & Telemetria (IoT)</h2>
+                </div>
+                <span class="badge badge-normal"><span class="badge-dot"></span>100% Conforme</span>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 12px;">
+                <!-- Câmara A -->
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: var(--bg-surface-alt); border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                  <div>
+                    <div style="font-weight: 700; font-size: 13.5px; color: var(--petroleo-950)">Câmara Fria A • Congelados</div>
+                    <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 2px">4 lotes armazenados • Sensor Térmico S-01</div>
+                  </div>
+                  <div style="text-align: right">
+                    <div style="font-size: 16px; font-weight: 800; color: var(--petroleo-700)">-18,4°C</div>
+                    <span style="font-size: 11px; color: var(--status-normal-text); font-weight: 600">Ideal (-18° a -22°)</span>
+                  </div>
+                </div>
+
+                <!-- Câmara B -->
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: var(--bg-surface-alt); border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                  <div>
+                    <div style="font-weight: 700; font-size: 13.5px; color: var(--petroleo-950)">Câmara Fria B • Resfriados</div>
+                    <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 2px">2 lotes armazenados • Sensor Térmico S-02</div>
+                  </div>
+                  <div style="text-align: right">
+                    <div style="font-size: 16px; font-weight: 800; color: var(--petroleo-700)">+3,6°C</div>
+                    <span style="font-size: 11px; color: var(--status-normal-text); font-weight: 600">Ideal (0° a +4°)</span>
+                  </div>
+                </div>
+
+                <!-- Câmara C -->
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: var(--bg-surface-alt); border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                  <div>
+                    <div style="font-weight: 700; font-size: 13.5px; color: var(--petroleo-950)">Câmara C • Secos & Salgados</div>
+                    <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 2px">2 lotes armazenados • Sensor Térmico S-03</div>
+                  </div>
+                  <div style="text-align: right">
+                    <div style="font-size: 16px; font-weight: 800; color: var(--petroleo-700)">+21,2°C</div>
+                    <span style="font-size: 11px; color: var(--status-normal-text); font-weight: 600">Ambiente Controlado</span>
+                  </div>
+                </div>
+              </div>
+
+              <div style="margin-top: auto; padding-top: 12px; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border-subtle)">
+                Sensores térmicos conectados via barramento IoT • Atualização em tempo real.
               </div>
             </section>
           </div>
