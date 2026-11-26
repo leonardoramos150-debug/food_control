@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
+body {
+    font-family: "Google Sans", sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+body.modo-escuro {
+    background-color: #222;
+    color: #fff;
+}
+
+.sumido {
+    display: none;
+}
+
+.container, .tarefaAberta {
+    background-color: #ff9563;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+}
+h2.tarefaAberta {
+    margin: 0px;
+}
+
+body.modo-escuro .container
+{
+    background-color: #333;
+    border-color: #555;
+}
+body.modo-escuro .tarefaAberta {
+    background-color: #333;
+    border-color: #555;
+}
+
+input {
+    padding: 12px 20px;
+    width: 75%;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.container h2 {
+    width: 90%;             
+    margin: 10px auto;   
+    text-align: left;
+}
+
+#btn-tema {
+    padding: 12px 24px;
+    border-radius: 50px;
+    border: none;
+    background-color: #ffffff;
+    color: #131313;
+    border: 2px solid #131313;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.linha-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+
+#Adicionar {
+    padding: 12px 24px;
+    border-radius: 50px;
+    border: none;
+    background-color: #e05c1f;
+    color: #f1f1f1;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: inherit;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+#Adicionar:hover {
+    background-color: #c74d15;
+}
+
+#erro-adicionar, #sucesso-adicionar {
+    font-weight: lighter;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+
+.btns-timer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.btns-timer button {
+    padding: 10px 24px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    background-color: #90ff5c;
+}
+.btns-timer button:hover {
+    background-color: #c74d15;
+}
+
+#btn-iniciar {
+    background-color: #5feb1e;
+}
+#btn-iniciar:hover {
+    background-color: #46dd00;
+}
+
+#btn-pausar {
+    background-color: #ec672a;
+}
+#btn-pausar:hover {
+    background-color: #ca4000;
+    
+}
+
+.titulo-tarefa {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#tempo {
+    font-size: 90px;
+    margin-bottom: 5px;
+    margin-top: 0px;
+}
+
+#status {
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+#mensagem-final {
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+

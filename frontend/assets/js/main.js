@@ -1,91 +1,297 @@
-/**
- * FoodControl 4.0 - ERP Front-end Interactions & UX Engine
- * Provedor de micro-interações funcionais, filtros dinâmicos e controle de interface.
- */
+const API_URL = 'http://localhost:3000/api';
+
+const MENU_SISTEMA = [
+  {
+    titulo: 'Visão Geral',
+    itens: [
+      { href: 'dashboard.html', nome: 'Dashboard', svg: '<rect x="3" y="3" width="7" height="9" rx="1"></rect><rect x="14" y="3" width="7" height="5" rx="1"></rect><rect x="14" y="12" width="7" height="9" rx="1"></rect><rect x="3" y="16" width="7" height="5" rx="1"></rect>' }
+    ]
+  },
+  {
+    titulo: 'Operação',
+    itens: [
+      { href: 'produtos.html', nome: 'Produtos', svg: '<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line>' },
+      { href: 'lotes.html', nome: 'Lotes & Validade', svg: '<path d="M16.5 9.4 7.55 4.24a1.78 1.78 0 0 0-2.5 1.55v12.42a1.78 1.78 0 0 0 2.5 1.55L16.5 14.6a1.78 1.78 0 0 0 0-3.2z"></path><polyline points="18 4 18 20"></polyline>' },
+      { href: 'producao.html', nome: 'Produção', svg: '<circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.6.77 1.02 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>' },
+      { href: 'estoque.html', nome: 'Estoque', svg: '<rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>' }
+    ]
+  },
+  {
+    titulo: 'Comercial',
+    itens: [
+      { href: 'pedidos.html', nome: 'Pedidos', svg: '<circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>' }
+    ]
+  },
+  {
+    titulo: 'Qualidade',
+    itens: [
+      { href: 'perdas.html', nome: 'Perdas', svg: '<polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline>' },
+      { href: 'alertas.html', nome: 'Alertas', pill: true, svg: '<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path>' }
+    ]
+  },
+  {
+    titulo: 'Administração',
+    itens: [
+      { href: 'relatorios.html', nome: 'Relatórios', svg: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line>' },
+      { href: 'usuarios.html', nome: 'Usuários & Acessos', svg: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>' }
+    ]
+  }
+];
 
 document.addEventListener('DOMContentLoaded', () => {
-  initSearchShortcut();
+  verificarAutenticacao();
+  montarLayout();
+  atualizarInterfaceUsuario();
+  atualizarContadorAlertas();
   initTableFilters();
   initModals();
-  initAlertActions();
-  initBatchActions();
-  initFefoTimeline();
 });
 
-// Atalho global Ctrl+K para barra de busca
-function initSearchShortcut() {
-  const globalSearch = document.getElementById('globalSearchInput');
-  window.addEventListener('keydown', (e) => {
-    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
-      e.preventDefault();
-      if (globalSearch) {
-        globalSearch.focus();
-        showToast('Busca global ativada. Digite para localizar produtos ou lotes.', 'info');
-      }
-    }
-  });
+function obterUsuarioLogado() {
+  const salvo = localStorage.getItem('foodcontrol_usuario');
+  if (!salvo) return null;
+  try {
+    return JSON.parse(salvo);
+  } catch (e) {
+    return null;
+  }
 }
 
-// Filtro instantâneo para tabelas de dados
-function initTableFilters() {
-  const searchInput = document.getElementById('tableSearchInput') || document.getElementById('fPesquisar');
-  const categorySelect = document.getElementById('tableCategoryFilter') || document.getElementById('fCategoria');
-  const statusSelect = document.getElementById('tableStatusFilter') || document.getElementById('fStatus') || document.getElementById('fSituação');
-  const table = document.querySelector('.data-table tbody');
+function verificarAutenticacao() {
+  const naTelaLogin = window.location.pathname.endsWith('index.html') && !window.location.pathname.includes('/pages/');
+  if (naTelaLogin) return;
+  if (!obterUsuarioLogado()) {
+    window.location.href = '../index.html';
+  }
+}
 
-  if (!table) return;
+function sairDoSistema() {
+  localStorage.removeItem('foodcontrol_usuario');
+  window.location.href = '../index.html';
+}
 
-  function applyFilters() {
-    const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
-    const selectedCat = categorySelect ? categorySelect.value.toLowerCase().trim() : 'todas';
-    const selectedStat = statusSelect ? statusSelect.value.toLowerCase().trim() : 'todos';
+function montarLayout() {
+  const layout = document.querySelector('.app-layout');
+  const main = document.querySelector('.app-main');
+  if (!layout || !main) return;
 
-    const rows = table.querySelectorAll('tr');
-    let visibleCount = 0;
-
-    rows.forEach(row => {
-      const text = row.innerText.toLowerCase();
-      const matchesQuery = !query || text.includes(query);
-      const matchesCat = !selectedCat || selectedCat === 'todas' || text.includes(selectedCat);
-      const matchesStat = !selectedStat || selectedStat === 'todos' || selectedStat === 'todas' || text.includes(selectedStat);
-
-      if (matchesQuery && matchesCat && matchesStat) {
-        row.style.display = '';
-        visibleCount++;
-      } else {
-        row.style.display = 'none';
-      }
-    });
-
-    const counter = document.getElementById('tableRowCount');
-    if (counter) {
-      counter.innerText = `${visibleCount} registro(s) exibido(s)`;
+  const arquivoAtual = window.location.pathname.split('/').pop() || 'dashboard.html';
+  let navHtml = '';
+  for (let i = 0; i < MENU_SISTEMA.length; i++) {
+    const sec = MENU_SISTEMA[i];
+    navHtml += `<div class="nav-section"><span class="nav-section-title">${sec.titulo}</span>`;
+    for (let j = 0; j < sec.itens.length; j++) {
+      const it = sec.itens[j];
+      const ativo = it.href === arquivoAtual ? ' active' : '';
+      const aria = it.href === arquivoAtual ? ' aria-current="page"' : '';
+      const pill = it.pill ? '<span class="nav-pill" style="display:none">0</span>' : '';
+      navHtml += `<a href="${it.href}" class="nav-link${ativo}"${aria}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">${it.svg}</svg><span>${it.nome}</span>${pill}</a>`;
     }
+    navHtml += '</div>';
   }
 
-  if (searchInput) searchInput.addEventListener('input', applyFilters);
-  if (categorySelect) categorySelect.addEventListener('change', applyFilters);
-  if (statusSelect) statusSelect.addEventListener('change', applyFilters);
+  const sidebar = document.createElement('aside');
+  sidebar.className = 'app-sidebar';
+  sidebar.setAttribute('aria-label', 'Menu Principal');
+  sidebar.innerHTML = `
+    <div class="sidebar-header">
+      <a href="dashboard.html" class="sidebar-brand-standalone" title="Página Inicial">
+        <img src="../assets/img/logo-side.png" alt="FoodControl" class="sidebar-logo-img logo-side" />
+      </a>
+    </div>
+    <nav class="sidebar-nav">${navHtml}</nav>
+    <div class="sidebar-footer">
+      <span class="company-name">SaborSul Alimentos</span>
+      <a href="../index.html" class="sidebar-logout" title="Sair do sistema">Sair</a>
+    </div>
+  `;
+  layout.insertBefore(sidebar, main);
+
+  const grupo = document.body.dataset.grupo;
+  const pagina = document.body.dataset.pagina || document.title.replace(' - FoodControl', '');
+  const migalhaGrupo = grupo ? `<span>${grupo}</span><span class="separator">/</span>` : '';
+  const sinoAlertas = arquivoAtual !== 'alertas.html'
+    ? `<a href="alertas.html" class="header-notification-btn" title="Central de Alertas"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg><span class="notification-count" style="display:none">0</span></a>`
+    : '';
+
+  const header = document.createElement('header');
+  header.className = 'app-header';
+  header.innerHTML = `
+    <div class="header-breadcrumbs">
+      <a href="dashboard.html">Início</a><span class="separator">/</span>${migalhaGrupo}<span class="current">${pagina}</span>
+    </div>
+    <div class="header-right">
+      <div class="operational-date-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        <span>-</span>
+      </div>
+      ${sinoAlertas}
+      <div class="user-profile">
+        <div class="user-avatar">--</div>
+        <div class="user-details"><span class="user-name">Usuário</span><span class="user-role">Perfil</span></div>
+      </div>
+    </div>
+  `;
+  main.insertBefore(header, main.firstChild);
 }
 
-// Sistema de Modais Acessíveis
-function initModals() {
-  const triggers = document.querySelectorAll('[data-modal-target]');
-  const closeButtons = document.querySelectorAll('[data-modal-close]');
+function atualizarInterfaceUsuario() {
+  const usuario = obterUsuarioLogado();
+  const dataEl = document.querySelector('.operational-date-chip span');
+  if (dataEl) dataEl.innerText = formatarDataBR(hojeLocalIso());
 
-  triggers.forEach(btn => {
+  const btnSair = document.querySelector('.sidebar-logout');
+  if (btnSair) {
+    btnSair.addEventListener('click', (e) => {
+      e.preventDefault();
+      sairDoSistema();
+    });
+  }
+
+  if (!usuario) return;
+
+  const nomesPerfis = { administrador: 'Administrador', producao: 'Produção', estoque: 'Estoque', qualidade: 'Qualidade' };
+  const nomeEl = document.querySelector('.user-name');
+  const roleEl = document.querySelector('.user-role');
+  const avatarEl = document.querySelector('.user-avatar');
+
+  if (nomeEl) nomeEl.innerText = usuario.nome;
+  if (roleEl) roleEl.innerText = nomesPerfis[usuario.perfil] || usuario.perfil;
+  if (avatarEl) {
+    const partes = usuario.nome.trim().split(' ');
+    avatarEl.innerText = partes.length > 1 ? (partes[0][0] + partes[partes.length - 1][0]).toUpperCase() : usuario.nome.slice(0, 2).toUpperCase();
+  }
+
+  if (usuario.perfil !== 'administrador') {
+    const linkUsuarios = document.querySelector('a[href="usuarios.html"]');
+    if (linkUsuarios) linkUsuarios.style.display = 'none';
+  }
+  if (usuario.perfil === 'producao') {
+    const linkPerdas = document.querySelector('a[href="perdas.html"]');
+    if (linkPerdas) linkPerdas.style.display = 'none';
+  }
+}
+
+async function atualizarContadorAlertas() {
+  const badgeHeader = document.querySelector('.notification-count');
+  const pillMenu = document.querySelector('.nav-pill');
+  if (!badgeHeader && !pillMenu) return;
+
+  try {
+    const alertas = await apiRequest('/alertas');
+    let abertos = 0;
+    for (let i = 0; i < alertas.length; i++) {
+      if (alertas[i].status === 'Aberto') abertos++;
+    }
+    if (badgeHeader) {
+      badgeHeader.innerText = abertos;
+      badgeHeader.style.display = abertos > 0 ? '' : 'none';
+    }
+    if (pillMenu) {
+      pillMenu.innerText = abertos;
+      pillMenu.style.display = abertos > 0 ? '' : 'none';
+    }
+  } catch (erro) {
+    console.error('Erro ao contar alertas:', erro);
+  }
+}
+
+async function apiRequest(caminho, metodo = 'GET', corpo = null) {
+  const opcoes = { method: metodo, headers: { 'Content-Type': 'application/json' } };
+  if (corpo !== null) opcoes.body = JSON.stringify(corpo);
+
+  const resp = await fetch(`${API_URL}${caminho}`, opcoes);
+  const dados = await resp.json();
+  if (!resp.ok) throw new Error(dados.mensagem || 'Erro ao comunicar com o servidor');
+  return dados;
+}
+
+function hojeLocalIso() {
+  return new Date().toLocaleDateString('en-CA');
+}
+
+function primeiroDiaMesIso() {
+  return hojeLocalIso().slice(0, 8) + '01';
+}
+
+function formatarDataBR(dataIso) {
+  if (!dataIso) return '-';
+  const p = String(dataIso).slice(0, 10).split('-');
+  return p.length === 3 ? `${p[2]}/${p[1]}/${p[0]}` : String(dataIso);
+}
+
+function formatarMoeda(valor) {
+  return 'R$ ' + (Number(valor) || 0).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function formatarNumero(valor) {
+  return (Number(valor) || 0).toLocaleString('pt-BR');
+}
+
+function criarBadge(classe, texto, comPonto = true) {
+  const ponto = comPonto ? '<span class="badge-dot"></span>' : '';
+  return `<span class="badge ${classe}">${ponto}${texto}</span>`;
+}
+
+function aplicarFiltrosTabela() {
+  const searchInput = document.getElementById('tableSearchInput');
+  const categorySelect = document.getElementById('tableCategoryFilter');
+  const statusSelect = document.getElementById('tableStatusFilter');
+  const table = document.querySelector('.data-table tbody');
+  if (!table) return;
+
+  const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+  const selectedCat = categorySelect ? categorySelect.value.toLowerCase().trim() : 'todas';
+  const selectedStat = statusSelect ? statusSelect.value.toLowerCase().trim() : 'todos';
+
+  const rows = table.querySelectorAll('tr');
+  let visibleCount = 0;
+
+  rows.forEach((row) => {
+    const text = row.innerText.toLowerCase();
+    const ok = (!query || text.includes(query))
+      && (!selectedCat || selectedCat === 'todas' || text.includes(selectedCat))
+      && (!selectedStat || selectedStat === 'todos' || selectedStat === 'todas' || text.includes(selectedStat));
+    row.style.display = ok ? '' : 'none';
+    if (ok) visibleCount++;
+  });
+
+  const counter = document.getElementById('tableRowCount');
+  if (counter) counter.innerText = `${visibleCount} registro(s) exibido(s)`;
+}
+
+function initTableFilters() {
+  ['tableSearchInput', 'tableCategoryFilter', 'tableStatusFilter'].forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener(id === 'tableSearchInput' ? 'input' : 'change', aplicarFiltrosTabela);
+  });
+}
+
+function abrirModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function fecharModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+}
+
+function initModals() {
+  document.querySelectorAll('[data-modal-target]').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const targetId = btn.getAttribute('data-modal-target');
-      const modal = document.getElementById(targetId);
-      if (modal) {
-        modal.classList.add('is-open');
-        document.body.style.overflow = 'hidden';
-      }
+      abrirModal(btn.getAttribute('data-modal-target'));
     });
   });
 
-  closeButtons.forEach(btn => {
+  document.querySelectorAll('[data-modal-close]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const modal = btn.closest('.modal-backdrop');
       if (modal) {
@@ -95,8 +301,7 @@ function initModals() {
     });
   });
 
-  // Fechar ao clicar fora
-  document.querySelectorAll('.modal-backdrop').forEach(modal => {
+  document.querySelectorAll('.modal-backdrop').forEach((modal) => {
     modal.addEventListener('click', (e) => {
       if (e.target === modal) {
         modal.classList.remove('is-open');
@@ -106,62 +311,6 @@ function initModals() {
   });
 }
 
-// Ações inline para resolução de Alertas
-function initAlertActions() {
-  document.querySelectorAll('.js-resolve-alert').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const alertItem = btn.closest('.alert-item');
-      if (alertItem) {
-        alertItem.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
-        alertItem.style.opacity = '0';
-        alertItem.style.transform = 'translateX(20px)';
-        setTimeout(() => {
-          alertItem.remove();
-          showToast('Alerta marcado como resolvido no sistema.', 'success');
-          updateOpenAlertsCount();
-        }, 250);
-      }
-    });
-  });
-}
-
-function updateOpenAlertsCount() {
-  const alerts = document.querySelectorAll('.alert-item');
-  const badge = document.querySelector('.notification-count');
-  const panelBadge = document.querySelector('.panel-badge');
-  if (badge) {
-    badge.innerText = alerts.length;
-    if (alerts.length === 0) badge.style.display = 'none';
-  }
-  if (panelBadge) {
-    panelBadge.innerText = `${alerts.length} ativos`;
-  }
-}
-
-// Ações em Lotes (Bloqueio / Liberação com feedback)
-function initBatchActions() {
-  document.querySelectorAll('.js-block-batch').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const row = btn.closest('tr');
-      const batchCode = row ? row.querySelector('td')?.innerText.trim() : 'Lote';
-      
-      if (btn.classList.contains('is-blocked')) {
-        btn.classList.remove('is-blocked');
-        btn.innerText = 'Bloquear';
-        btn.className = 'btn btn-secondary btn-sm js-block-batch';
-        showToast(`${batchCode} desbloqueado e retornado para Disponível.`, 'info');
-      } else {
-        btn.classList.add('is-blocked');
-        btn.innerText = 'Desbloquear';
-        btn.className = 'btn btn-danger-outline btn-sm js-block-batch is-blocked';
-        showToast(`${batchCode} foi bloqueado para expedição preventiva.`, 'warning');
-      }
-    });
-  });
-}
-
-// Toast Feedback System
 function showToast(message, type = 'info') {
   let container = document.querySelector('.toast-container');
   if (!container) {
@@ -172,15 +321,7 @@ function showToast(message, type = 'info') {
 
   const toast = document.createElement('div');
   toast.className = `toast toast-${type}`;
-  
-  let iconSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>`;
-  if (type === 'success') {
-    iconSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>`;
-  } else if (type === 'warning') {
-    iconSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>`;
-  }
-
-  toast.innerHTML = `${iconSvg}<span>${message}</span>`;
+  toast.innerHTML = `<span>${message}</span>`;
   container.appendChild(toast);
 
   setTimeout(() => {
@@ -189,383 +330,4 @@ function showToast(message, type = 'info') {
     toast.style.transform = 'translateX(20px)';
     setTimeout(() => toast.remove(), 300);
   }, 3500);
-}
-
-// ========================================================
-// Linha do Tempo FEFO Linear com Clustering & Popovers
-// ========================================================
-function initFefoTimeline() {
-  const timelineViewport = document.querySelector('.fefo-timeline-visual');
-  if (!timelineViewport) return;
-
-  const FEFO_LOTS = {
-    'LOT-2026-021': {
-      code: 'LOT-2026-021',
-      product: 'Lasanha Bolonhesa',
-      chamber: 'camara-a',
-      chamberLabel: 'Câmara A • Congelados (-18°C)',
-      location: 'Pallet F-12',
-      days: 5,
-      date: '05/10/2026',
-      qty: '320 un',
-      price: 'R$ 12,50',
-      riskValue: 'R$ 4.000,00',
-      status: 'critico',
-      statusLabel: 'Crítico (≤ 7 dias)',
-      primaryCta: 'Alocar no Pedido #102',
-      secondaryCta: 'Despachar com Desconto'
-    },
-    'LOT-2026-024': {
-      code: 'LOT-2026-024',
-      product: 'Lasanha Bolonhesa',
-      chamber: 'camara-a',
-      chamberLabel: 'Câmara A • Congelados (-18°C)',
-      location: 'Pallet F-15',
-      days: 12,
-      date: '12/10/2026',
-      qty: '100 un',
-      price: 'R$ 12,50',
-      riskValue: 'R$ 1.250,00',
-      status: 'atencao',
-      statusLabel: 'Atenção (12 dias)',
-      primaryCta: 'Alocar no Pedido #104',
-      secondaryCta: 'Mover de Pallet'
-    },
-    'LOT-2026-036': {
-      code: 'LOT-2026-036',
-      product: 'Strogonoff de Frango',
-      chamber: 'camara-b',
-      chamberLabel: 'Câmara B • Resfriados (+4°C)',
-      location: 'Pallet R-04',
-      days: 25,
-      date: '25/10/2026',
-      qty: '40 un',
-      price: 'R$ 15,00',
-      riskValue: 'R$ 600,00',
-      status: 'atencao',
-      statusLabel: 'Atenção (25 dias)',
-      primaryCta: 'Alocar no Pedido #105',
-      secondaryCta: 'Emitir OP Complementar'
-    },
-    'LOT-2026-041': {
-      code: 'LOT-2026-041',
-      product: 'Pastel de Carne',
-      chamber: 'camara-b',
-      chamberLabel: 'Câmara B • Resfriados (+4°C)',
-      location: 'Pallet R-09',
-      days: 50,
-      date: '19/11/2026',
-      qty: '500 un',
-      price: 'R$ 3,25',
-      riskValue: 'R$ 1.625,00',
-      status: 'normal',
-      statusLabel: 'Regular (50 dias)',
-      primaryCta: 'Vincular a Pedido',
-      secondaryCta: 'Inspecionar'
-    },
-    'LOT-2026-042': {
-      code: 'LOT-2026-042',
-      product: 'Coxinha de Frango',
-      chamber: 'camara-c',
-      chamberLabel: 'Câmara C • Secos & Salgados',
-      location: 'Pallet S-02',
-      days: 82,
-      date: '21/12/2026',
-      qty: '900 un',
-      price: 'R$ 3,00',
-      riskValue: 'R$ 2.700,00',
-      status: 'normal',
-      statusLabel: 'Regular (82 dias)',
-      primaryCta: 'Reinspecionar',
-      secondaryCta: 'Mover de Pallet'
-    },
-    'LOT-2026-043': {
-      code: 'LOT-2026-043',
-      product: 'Lasanha Bolonhesa',
-      chamber: 'camara-a',
-      chamberLabel: 'Câmara A • Congelados (-18°C)',
-      location: 'Pallet F-18',
-      days: 85,
-      date: '24/12/2026',
-      qty: '580 un',
-      price: 'R$ 12,50',
-      riskValue: 'R$ 7.250,00',
-      status: 'normal',
-      statusLabel: 'Regular (85 dias)',
-      primaryCta: 'Reservar para Distribuição',
-      secondaryCta: 'Ver Detalhes'
-    },
-    'LOT-2026-039': {
-      code: 'LOT-2026-039',
-      product: 'Pizza Calabresa',
-      chamber: 'camara-a',
-      chamberLabel: 'Câmara A • Congelados (-18°C)',
-      location: 'Pallet F-08',
-      days: 105,
-      date: '13/01/2027',
-      qty: '100 un',
-      price: 'R$ 18,00',
-      riskValue: 'R$ 1.800,00',
-      status: 'normal',
-      statusLabel: 'Regular (> 90 dias)',
-      primaryCta: 'Reservar para Distribuição',
-      secondaryCta: 'Ver Detalhes'
-    }
-  };
-
-  const FEFO_CLUSTERS = {
-    'warning': {
-      title: 'Lotes em Atenção • 8 a 30 dias',
-      subtitle: '2 lotes agrupados · Total R$ 1.850,00',
-      lots: ['LOT-2026-024', 'LOT-2026-036']
-    },
-    'regular': {
-      title: 'Lotes Regulares • Acima de 30 dias',
-      subtitle: '4 lotes com shelf-life seguro · Total R$ 13.375,00',
-      lots: ['LOT-2026-041', 'LOT-2026-042', 'LOT-2026-043', 'LOT-2026-039']
-    }
-  };
-
-  const popover = document.getElementById('fefoClusterPopover');
-  const popoverTitle = document.getElementById('popoverTitle');
-  const popoverSubtitle = document.getElementById('popoverSubtitle');
-  const popoverBody = document.getElementById('popoverBody');
-  const popoverCloseBtn = document.getElementById('popoverCloseBtn');
-
-  const filterButtons = document.querySelectorAll('.fefo-filter-btn');
-  const lotNodes = document.querySelectorAll('.timeline-lot-node');
-  const clusterNodes = document.querySelectorAll('.timeline-cluster-node');
-
-  let popoverCloseTimeout = null;
-
-  function closePopover() {
-    if (!popover) return;
-    popover.classList.remove('is-open');
-    clusterNodes.forEach(c => c.classList.remove('is-active'));
-    lotNodes.forEach(n => n.classList.remove('is-selected'));
-  }
-
-  function scheduleClosePopover() {
-    clearTimeout(popoverCloseTimeout);
-    popoverCloseTimeout = setTimeout(() => {
-      closePopover();
-    }, 350);
-  }
-
-  function cancelClosePopover() {
-    clearTimeout(popoverCloseTimeout);
-  }
-
-  function renderLotsInPopover(lotsArray) {
-    if (!popoverBody) return;
-    popoverBody.innerHTML = lotsArray.map(lot => {
-      if (!lot) return '';
-      const isCrit = lot.status === 'critico';
-      const isWarn = lot.status === 'atencao';
-      const badgeBg = isCrit ? '#fee2e2' : isWarn ? '#fef3c7' : '#e0f2fe';
-      const badgeColor = isCrit ? '#991b1b' : isWarn ? '#92400e' : '#0369a1';
-
-      return `
-        <div class="popover-lot-item" data-lot="${lot.code}">
-          <div class="popover-lot-header">
-            <span class="popover-lot-code">${lot.code}</span>
-            <span style="font-size:10px; font-weight:800; padding:2px 7px; border-radius:999px; background:${badgeBg}; color:${badgeColor}">
-              ${lot.days} dias (${lot.date})
-            </span>
-          </div>
-          <div class="popover-lot-prod">${lot.product}</div>
-          <div class="popover-lot-metrics">
-            <span>Saldo: <b>${lot.qty}</b> (${lot.location})</span>
-            <span>Risco: <b style="color:${isCrit ? '#dc2626' : isWarn ? '#d97706' : '#0284c7'}">${lot.riskValue}</b></span>
-          </div>
-          <div class="popover-lot-actions">
-            <button type="button" class="popover-cta-btn popover-cta-primary js-popover-cta" data-action="allocate" data-lot="${lot.code}">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              ${lot.primaryCta}
-            </button>
-            <button type="button" class="popover-cta-btn popover-cta-secondary js-popover-cta" data-action="secondary" data-lot="${lot.code}">
-              ${lot.secondaryCta}
-            </button>
-          </div>
-        </div>
-      `;
-    }).join('');
-
-    // Eventos nos CTAs do popover
-    popoverBody.querySelectorAll('.js-popover-cta').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const code = btn.getAttribute('data-lot');
-        const action = btn.getAttribute('data-action');
-        const lot = FEFO_LOTS[code];
-        if (!lot) return;
-
-        if (action === 'allocate') {
-          btn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Alocado`;
-          btn.style.background = '#059669';
-          showToast(`Sucesso: ${lot.product} (${lot.code}) alocado com prioridade FEFO.`, 'success');
-        } else {
-          showToast(`Operação registrada para o lote ${lot.code} (${lot.location}).`, 'info');
-        }
-      });
-    });
-  }
-
-  function positionPopover(triggerEl) {
-    if (!popover || !triggerEl) return;
-    const viewportRect = timelineViewport.getBoundingClientRect();
-    const triggerRect = triggerEl.getBoundingClientRect();
-
-    let leftPos = triggerRect.left - viewportRect.left - 40;
-    const maxLeft = viewportRect.width - 400;
-    leftPos = Math.max(16, Math.min(leftPos, maxLeft));
-
-    let topPos = triggerRect.top - viewportRect.top - 12;
-    if (topPos < 10) topPos = 10;
-
-    popover.style.left = `${leftPos}px`;
-    popover.style.top = `${topPos}px`;
-    popover.classList.add('is-open');
-  }
-
-  function openLotPopover(lotId, triggerEl) {
-    const lot = FEFO_LOTS[lotId];
-    if (!lot || !popover) return;
-
-    cancelClosePopover();
-    lotNodes.forEach(n => n.classList.remove('is-selected'));
-    clusterNodes.forEach(c => c.classList.remove('is-active'));
-    triggerEl.classList.add('is-selected');
-
-    if (popoverTitle) popoverTitle.innerText = `Lote Crítico • ${lot.code}`;
-    if (popoverSubtitle) popoverSubtitle.innerText = `Vencimento em ${lot.days} dias · ${lot.chamberLabel.split('•')[0].trim()}`;
-
-    renderLotsInPopover([lot]);
-    positionPopover(triggerEl);
-  }
-
-  function openClusterPopover(clusterKey, triggerEl) {
-    const cluster = FEFO_CLUSTERS[clusterKey];
-    if (!cluster || !popover) return;
-
-    cancelClosePopover();
-    lotNodes.forEach(n => n.classList.remove('is-selected'));
-    clusterNodes.forEach(c => c.classList.remove('is-active'));
-    triggerEl.classList.add('is-active');
-
-    if (popoverTitle) popoverTitle.innerText = cluster.title;
-    if (popoverSubtitle) popoverSubtitle.innerText = cluster.subtitle;
-
-    const lots = cluster.lots.map(id => FEFO_LOTS[id]).filter(Boolean);
-    renderLotsInPopover(lots);
-    positionPopover(triggerEl);
-  }
-
-  // Interação nos Clusters (Clique e Hover com auto-dismiss)
-  clusterNodes.forEach(chip => {
-    const clusterKey = chip.getAttribute('data-cluster');
-
-    chip.addEventListener('click', (e) => {
-      e.stopPropagation();
-      openClusterPopover(clusterKey, chip);
-    });
-
-    chip.addEventListener('mouseenter', () => {
-      cancelClosePopover();
-      openClusterPopover(clusterKey, chip);
-    });
-
-    chip.addEventListener('mouseleave', () => {
-      scheduleClosePopover();
-    });
-  });
-
-  // Interação no Node Crítico Individual
-  lotNodes.forEach(node => {
-    const lotId = node.getAttribute('data-lot');
-
-    node.addEventListener('click', (e) => {
-      e.stopPropagation();
-      openLotPopover(lotId, node);
-    });
-
-    node.addEventListener('mouseenter', () => {
-      cancelClosePopover();
-      openLotPopover(lotId, node);
-    });
-
-    node.addEventListener('mouseleave', () => {
-      scheduleClosePopover();
-    });
-  });
-
-  // Eventos no próprio Popover (manter aberto no hover, fechar ao sair)
-  if (popover) {
-    popover.addEventListener('mouseenter', () => {
-      cancelClosePopover();
-    });
-
-    popover.addEventListener('mouseleave', () => {
-      scheduleClosePopover();
-    });
-  }
-
-  if (popoverCloseBtn) {
-    popoverCloseBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      closePopover();
-    });
-  }
-
-  // Fechar ao clicar fora
-  document.addEventListener('click', (e) => {
-    if (popover && popover.classList.contains('is-open')) {
-      if (!popover.contains(e.target) && !e.target.closest('.timeline-cluster-node') && !e.target.closest('.timeline-lot-node')) {
-        closePopover();
-      }
-    }
-  });
-
-  // Filtros de Câmaras Frias
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filter = btn.getAttribute('data-filter');
-      closePopover();
-
-      // Filtrar node individual
-      lotNodes.forEach(node => {
-        const chamber = node.getAttribute('data-chamber');
-        if (filter === 'todos' || chamber === filter) {
-          node.style.opacity = '1';
-          node.style.pointerEvents = 'auto';
-        } else {
-          node.style.opacity = '0.15';
-          node.style.pointerEvents = 'none';
-        }
-      });
-
-      // Filtrar clusters
-      clusterNodes.forEach(chip => {
-        const clusterKey = chip.getAttribute('data-cluster');
-        const cluster = FEFO_CLUSTERS[clusterKey];
-        if (!cluster) return;
-
-        const hasMatchingLot = cluster.lots.some(lotId => {
-          const lot = FEFO_LOTS[lotId];
-          return filter === 'todos' || (lot && lot.chamber === filter);
-        });
-
-        if (hasMatchingLot) {
-          chip.style.opacity = '1';
-          chip.style.pointerEvents = 'auto';
-        } else {
-          chip.style.opacity = '0.15';
-          chip.style.pointerEvents = 'none';
-        }
-      });
-    });
-  });
 }

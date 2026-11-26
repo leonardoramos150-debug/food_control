@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de Usuários</title>
+    <style>
+        /* Estilos visuais da página */
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f0f2f5; color: #333; margin: 0; padding: 2rem; display: flex; justify-content: center; }
+        .container { width: 100%; max-width: 800px; background-color: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
+        h1, h2 { color: #1c1e21; text-align: center; }
+        .form-container { background-color: #f9f9f9; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #ddd; }
+        .form-group { margin-bottom: 1rem; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+        input[type="text"], input[type="email"] { width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 1rem; }
+        button { padding: 0.75rem 1.5rem; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem; font-weight: 600; }
+        .btn-salvar { background-color: #007bff; color: white; }
+        .btn-editar { background-color: #ffc107; color: #212529; }
+        .btn-excluir { background-color: #dc3545; color: white; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #f8f9fa; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Gerenciador de Usuários</h1>
+        <!-- Formulário -->
+        <div class="form-container">
+            <form id="userForm">
+                <input type="hidden" id="userId">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <button type="submit" class="btn-salvar">Salvar</button>
+            </form>
+        </div>
+        <!-- Tabela -->
+        <h2>Usuários Cadastrados</h2>
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        const apiUrl = 'http://localhost:3000/usuarios';
+        const userForm = document.getElementById('userForm');
+        const userIdInput = document.getElementById('userId');
+        const nomeInput = document.getElementById('nome');
+        const emailInput = document.getElementById('email');
+        const userTableBody = document.querySelector('#userTable tbody');
+        
+        // READ: Busca e exibe os usuários na tabela
+        async function fetchUsers() {
+            const response = await fetch(apiUrl);
+            const users = await response.json();
+            userTableBody.innerHTML = '';
+            users.forEach(user => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${user.id}</td>
+                    <td>${user.nome}</td>
+                    <td>${user.email}</td>
+                    <td>
+                        <button class="btn-editar" onclick="editUser(${user.id}, '${user.nome}', '${user.email}')">Editar</button>
+                        <button class="btn-excluir" onclick="deleteUser(${user.id})">Excluir</button>
+                    </td>
+                `;
+                userTableBody.appendChild(tr);
+            });
+        }
+
+        // CREATE / UPDATE: Lida com o envio do formulário
+        userForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const id = userIdInput.value;
+            const user = { nome: nomeInput.value, email: emailInput.value };
+            const method = id ? 'PUT' : 'POST';
+            const url = id ? `${apiUrl}/${id}` : apiUrl;
+
+            await fetch(url, {
+                method: method,
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(user),
+            });
+            
+            userForm.reset();
+            userIdInput.value = '';
+            await fetchUsers();
+        });
+
+        // Prepara o formulário para UPDATE
+        function editUser(id, nome, email) {
+            userIdInput.value = id;
+            nomeInput.value = nome;
+            emailInput.value = email;
+        }
+        
+        // DELETE: Exclui um usuário
+        async function deleteUser(id) {
+            if (confirm('Tem certeza que deseja excluir?')) {
+                await fetch(`${apiUrl}/${id}`, { method: 'DELETE' });
+                await fetchUsers();
+            }
+        }
+
+        // Carrega os usuários ao iniciar a página
+        document.addEventListener('DOMContentLoaded', fetchUsers);
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+Ótima pergunta! Analisando o edital oficial do Tio Alceu, o seu projeto já cobre cerca de 70% dos requisitos, mas ainda faltam 4 detalhes obrigatórios para você garantir a nota 10,0.
+
+Veja o raio-x completo do que já temos e do que falta:
+
+📋 Checklist Oficial do Professor Alceu
+Requisito do Edital	Status Atual	O que já fizemos / O que falta
+Módulo 01: document.querySelector	Feito	Usamos por ID (#btn-iniciar) e por Classe (.tarefaAberta).
+Módulo 02: Evento click	Feito	Usamos nos botões de tema, adicionar, iniciar e pausar.
+Módulo 02: Evento input	❌ Falta	Falta colocar um addEventListener('input').
+Módulo 02: Eventos de mouse (mouseover/mouseout ou mousedown/mouseup)	❌ Falta	Falta usar eventos de mouse específicos.
+Módulo 03: .classList.add(), .remove(), .toggle()	Feito	Usamos .toggle no tema e .add/.remove no sumido.
+Módulo 04: Ler dados com .value	Feito	Lemos o nome da tarefa com nomeTarefa.value.
+Módulo 04: Mudar texto com .innerText	Feito	Usamos no timer, no título e no status.
+Módulo 04: Travar botão com .disabled	Feito	Usamos no botão Iniciar e Pausar.
+Módulo 04: Trocar imagem com .src	❌ Falta	Falta uma <img> trocando de imagem no JavaScript.
+Módulo 04: Alterar tipo de input com .type	❌ Falta	Falta alterar a propriedade .type.
+Módulo 05: setInterval e clearInterval	Feito	O cronômetro já funciona e pausa perfeitamente.
+Módulo 05: setTimeout (atraso)	❌ Falta	Falta um evento com atraso (ex: mensagem que some após 3s).
+Como podemos matar todos os requisitos que faltam de forma fácil?
+Podemos resolver tudo sem complicar o seu projeto, aproveitando os exercícios que você já fez:
+
+O setTimeout (Módulo 05):
+Quando o usuário clica em Adicionar, mostramos um aviso verde "Tarefa adicionada com sucesso!" que some sozinho após 3 segundos com setTimeout. (Exatamente o exemplo do professor!)
+
+O evento 'input' (Módulo 02):
+Colocamos um addEventListener('input') no campo de texto: enquanto o usuário digita, se o aviso de erro estiver na tela, ele some imediatamente ao teclar qualquer letra.
+
+Trocar .src da imagem (Módulo 04):
+Colocamos uma imagem de status da tarefa (por exemplo, um ícone de trabalho/foco quando o tempo está rodando e um ícone de café/descanso quando pausa ou termina). Ao mudar o status, trocamos o img.src.
+
+Alterar .type e mousedown/mouseup (Módulos 02 e 04 juntos!):
+Para dar o ar de "sistema de empresa", podemos ter um campo simples de "Código do Colaborador" ou "PIN de Acesso" com o clássico ícone de olho (igual ao Exercício 02 da sua lista!).
+
+Ao segurar o mouse (mousedown), muda .type = 'text' e o olho abre.
+Ao soltar (mouseup), volta .type = 'password' e o olho fecha.
+(Com isso, você mata o .type, o mousedown e o mouseup de uma só vez!)
+Quer começar adicionando o setTimeout e o evento input, que levam menos de 2 minutos para fazer?

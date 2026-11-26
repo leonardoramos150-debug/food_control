@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortal Kombat</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <section id="tela-selecao">
+        <div class="container" align="center">
+            <img class="logo" src="images/logo-mortal.webp">
+
+            <div class="player-1" align="center">
+                <img id="img-player-1" class="show-player-1" src="images/personagens/sub_zero_show.webp">
+            </div>
+
+            <div class="player-2" align="center">
+                <img id="img-player-2" class="show-player-2" src="images/personagens/baraka_show.webp">
+            </div>
+
+            <div style="position: relative; z-index: 99999999;">
+                <h2 onclick="escolherPlayer(1)" id="nome-personagem-1"
+                    style="display: inline-block;margin-right: 50px;margin-top: 10vh;" class="titulo-personagens">1</h2>
+                <h2 style="display: inline-block;">X</h2>
+                <h2 onclick="escolherPlayer(2)" id="nome-personagem-2" style="display: inline-block;margin-left: 50px;"
+                    class="titulo-personagens">2</h2>
+            </div>
+
+
+            <div class="menu-seletor" id="menu-seletor" align="center">
+                <!-- INFORMAÇÕES DOS PERSONAGENS -->
+                <div class="thumbs">
+                    <img onclick="selecionarPersonagem('Baraka','baraka_show.webp')" class="thumb"
+                        src="images/personagens/baraka_render.png">
+                    <img onclick="selecionarPersonagem('Johnny Cage','johnny_cage_show.webp')" class="thumb"
+                        src="images/personagens/johnny_cage_render.png">
+                    <img onclick="selecionarPersonagem('Kitana','kitana_show.webp')" class="thumb"
+                        src="images/personagens/kitana_render.png">
+                    <img onclick="selecionarPersonagem('Liu Kang','liu_kang_show.webp')" class="thumb"
+                        src="images/personagens/liu_kang_render.png">
+                    <img onclick="selecionarPersonagem('Mileena','mileena_show.webp')" class="thumb"
+                        src="images/personagens/mileena_render.png">
+                    <img onclick="selecionarPersonagem('Raiden','raiden_show.webp')" class="thumb"
+                        src="images/personagens/raiden_render.png">
+                    <img onclick="selecionarPersonagem('Scorpion','scorpion_show.webp')" class="thumb"
+                        src="images/personagens/scorpion_render.png">
+                    <img onclick="selecionarPersonagem('Shaokahn','shaokahn_show.webp')" class="thumb"
+                        src="images/personagens/shaokahn_render.png">
+                    <img onclick="selecionarPersonagem('Sub Zero','sub_zero_show.webp')" class="thumb"
+                        src="images/personagens/sub_zero_render.png">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

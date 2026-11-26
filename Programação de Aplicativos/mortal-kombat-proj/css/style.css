@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Outfit:wght@100..900&family=Press+Start+2P&display=swap');
+
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Press Start 2P", sans-serif;
+    color: #fff;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../images/background.webp");
+    background-size: cover;
+}
+
+.logo {
+    width: 30%;
+    margin-top: 20px;
+}
+
+.player-1 {
+    width: 49%;
+    position: absolute;
+}
+
+.show-player-1 {
+    height: 52vh;
+    margin-left: -300px;
+}
+
+.player-2 {
+    width: 49%;
+    position: absolute;
+    right: 0;
+    transform: scaleX(-1);
+}
+
+.show-player-2 {
+    height: 52vh;
+    margin-right: 300px;
+}
+
+.menu-seletor {
+    width: 100%;
+    position: fixed;
+    z-index: 9999999;
+    bottom: 50px;
+}
+
+.thumbs {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.thumb {
+    display: inline-block;
+    width: 90px;
+    border: 5px solid gray;
+    margin-bottom: 10px;
+}
+
+.thumb:hover {
+    border: 5px solid green;
+    cursor: pointer;
+}
+
+.titulo-personagens {
+    cursor: pointer;
+}
+
+.selecionado {
+    border: 5px solid green;
+}

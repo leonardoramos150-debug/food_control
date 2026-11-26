@@ -3,142 +3,28 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Usuários & Parâmetros - FoodControl</title>
+    <title>Usuários - FoodControl</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
-  <body>
+  <body data-grupo="Administração" data-pagina="Usuários">
     <div class="app-layout">
-      <!-- Sidebar Corporativa com Logo Isolada (Sem texto redundante) -->
-      <aside class="app-sidebar" aria-label="Menu Principal">
-        <div class="sidebar-header">
-          <a href="dashboard.html" class="sidebar-brand-standalone" title="Página Inicial">
-            <img src="../assets/img/logo-side.png" alt="FoodControl" class="sidebar-logo-img logo-side" />
-          </a>
-        </div>
-
-        <nav class="sidebar-nav">
-          <div class="nav-section">
-            <span class="nav-section-title">Visão Geral</span>
-            <a href="dashboard.html" class="nav-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="9" rx="1"></rect><rect x="14" y="3" width="7" height="5" rx="1"></rect><rect x="14" y="12" width="7" height="9" rx="1"></rect><rect x="3" y="16" width="7" height="5" rx="1"></rect></svg>
-              <span>Dashboard</span>
-            </a>
-          </div>
-
-          <div class="nav-section">
-            <span class="nav-section-title">Operação</span>
-            <a href="produtos.html" class="nav-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-              <span>Produtos</span>
-            </a>
-            <a href="lotes.html" class="nav-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16.5 9.4 7.55 4.24a1.78 1.78 0 0 0-2.5 1.55v12.42a1.78 1.78 0 0 0 2.5 1.55L16.5 14.6a1.78 1.78 0 0 0 0-3.2z"></path><polyline points="18 4 18 20"></polyline></svg>
-              <span>Lotes & Validade</span>
-            </a>
-            <a href="producao.html" class="nav-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-              <span>Produção</span>
-            </a>
-            <a href="estoque.html" class="nav-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-              <span>Estoque</span>
-            </a>
-          </div>
-
-          <div class="nav-section">
-            <span class="nav-section-title">Comercial</span>
-            <a href="pedidos.html" class="nav-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-              <span>Pedidos</span>
-            </a>
-          </div>
-
-          <div class="nav-section">
-            <span class="nav-section-title">Qualidade</span>
-            <a href="perdas.html" class="nav-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg>
-              <span>Perdas</span>
-            </a>
-            <a href="alertas.html" class="nav-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-              <span>Alertas</span>
-              <span class="nav-pill">5</span>
-            </a>
-          </div>
-
-          <div class="nav-section">
-            <span class="nav-section-title">Administração</span>
-            <a href="relatorios.html" class="nav-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-              <span>Relatórios</span>
-            </a>
-            <a href="usuarios.html" class="nav-link active" aria-current="page">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-              <span>Usuários & Acessos</span>
-            </a>
-          </div>
-        </nav>
-
-        <div class="sidebar-footer">
-          <span class="company-name">SaborSul Alimentos</span>
-          <a href="../index.html" class="sidebar-logout" title="Sair do sistema">Sair</a>
-        </div>
-      </aside>
-
-      <!-- Área de Conteúdo Principal -->
       <main class="app-main">
-        <header class="app-header">
-          <div class="header-breadcrumbs">
-            <a href="dashboard.html">Início</a>
-            <span class="separator">/</span>
-            <span>Administração</span>
-            <span class="separator">/</span>
-            <span class="current">Usuários & Parâmetros</span>
-          </div>
-
-          <div class="header-right">
-            <div class="operational-date-chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-              <span>30/09/2026</span>
-            </div>
-
-            <a href="alertas.html" class="header-notification-btn" title="Central de Alertas">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-              <span class="notification-count">5</span>
-            </a>
-
-            <div class="user-profile">
-              <div class="user-avatar">MD</div>
-              <div class="user-details">
-                <span class="user-name">Marina Duarte</span>
-                <span class="user-role">Administrador</span>
-              </div>
-            </div>
-          </div>
-        </header>
-
         <div class="page-container">
           <div class="page-header">
             <div class="page-title-group">
-              <h1>Usuários e Configurações</h1>
-              <p>Gerencie quem acessa o sistema e calibres os limites do motor de alertas.</p>
+              <h1>Usuários e Acessos</h1>
+              <p>Gerencie os funcionários com acesso ao sistema e seus perfis.</p>
             </div>
             <div class="page-actions">
-              <button type="button" class="btn btn-primary" data-modal-target="modalNovoUsuario">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                <span>Novo Usuário</span>
-              </button>
+              <button type="button" class="btn btn-primary" data-modal-target="modalNovoUsuario">+ Novo Usuário</button>
             </div>
           </div>
 
-          <!-- Abas para separar Usuários de Parâmetros (Elimina Ambivalência) -->
-          <div class="segmented-tabs">
-            <button type="button" class="tab-btn active" id="tabBtnUsuarios" onclick="alternarAba('usuarios')">Contas de Usuários (4)</button>
-            <button type="button" class="tab-btn" id="tabBtnParametros" onclick="alternarAba('parametros')">Parâmetros de Alertas</button>
-          </div>
-
-          <!-- Painel 1: Tabela de Usuários Limpa -->
-          <section id="painelUsuarios" class="card-panel">
+          <section class="card-panel">
+            <div class="panel-header">
+              <div class="panel-title"><h2>Usuários Cadastrados</h2></div>
+              <span id="totalUsuariosBadge" class="panel-badge">0 usuários</span>
+            </div>
             <div class="table-responsive">
               <table class="data-table">
                 <thead>
@@ -151,107 +37,8 @@
                     <th style="text-align: right">Ações</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td><span class="cell-primary">Marina Duarte</span></td>
-                    <td style="color: var(--text-secondary)">marina@saborsul.com.br</td>
-                    <td><span class="badge badge-petroleo">Administrador</span></td>
-                    <td>Gerente Industrial</td>
-                    <td><span class="badge badge-normal"><span class="badge-dot"></span>Ativo</span></td>
-                    <td style="text-align: right">
-                      <button type="button" class="btn btn-secondary btn-sm" onclick="showToast('Edição do usuário Marina Duarte.', 'info')">Editar</button>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td><span class="cell-primary">Rafael Becker</span></td>
-                    <td style="color: var(--text-secondary)">rafael@saborsul.com.br</td>
-                    <td><span class="badge badge-info">Produção</span></td>
-                    <td>Supervisor de Produção</td>
-                    <td><span class="badge badge-normal"><span class="badge-dot"></span>Ativo</span></td>
-                    <td style="text-align: right">
-                      <button type="button" class="btn btn-secondary btn-sm" onclick="showToast('Edição do usuário Rafael Becker.', 'info')">Editar</button>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td><span class="cell-primary">Carlos Silva</span></td>
-                    <td style="color: var(--text-secondary)">carlos@saborsul.com.br</td>
-                    <td><span class="badge badge-atencao">Estoque</span></td>
-                    <td>Estoquista</td>
-                    <td><span class="badge badge-normal"><span class="badge-dot"></span>Ativo</span></td>
-                    <td style="text-align: right">
-                      <button type="button" class="btn btn-secondary btn-sm" onclick="showToast('Edição do usuário Carlos Silva.', 'info')">Editar</button>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td><span class="cell-primary">Ana Paula Souza</span></td>
-                    <td style="color: var(--text-secondary)">anapaula@saborsul.com.br</td>
-                    <td><span class="badge badge-critico">Qualidade</span></td>
-                    <td>Analista de Qualidade</td>
-                    <td><span class="badge badge-normal"><span class="badge-dot"></span>Ativo</span></td>
-                    <td style="text-align: right">
-                      <button type="button" class="btn btn-secondary btn-sm" onclick="showToast('Edição da usuária Ana Paula Souza.', 'info')">Editar</button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          <!-- Painel 2: Parâmetros do Motor (Fica oculto por padrão, sem poluir) -->
-          <section id="painelParametros" class="card-panel" style="display: none">
-            <div class="panel-header">
-              <div class="panel-title">
-                <h2>Limiares de Alertas Automáticos</h2>
-              </div>
-              <span class="panel-badge">Motor de Regras</span>
-            </div>
-
-            <div class="table-responsive">
-              <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>Regra</th>
-                    <th>Valor Calibrado</th>
-                    <th>Critério de Disparo</th>
-                    <th style="text-align: right">Ação</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><span class="cell-primary">Atenção de Validade</span></td>
-                    <td class="num font-semibold">15 dias</td>
-                    <td style="color: var(--text-secondary)">Lote com vencimento em até 15 dias entra no radar FEFO</td>
-                    <td style="text-align: right">
-                      <button type="button" class="btn btn-secondary btn-sm" onclick="showToast('Parâmetro atualizado.', 'info')">Ajustar</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><span class="cell-primary">Validade Crítica</span></td>
-                    <td class="num font-semibold" style="color: var(--status-critico-text)">7 dias</td>
-                    <td style="color: var(--text-secondary)">Lote com vencimento em até 7 dias dispara alerta de prioridade máxima</td>
-                    <td style="text-align: right">
-                      <button type="button" class="btn btn-secondary btn-sm" onclick="showToast('Parâmetro atualizado.', 'info')">Ajustar</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><span class="cell-primary">Atenção de Perdas</span></td>
-                    <td class="num font-semibold">20%</td>
-                    <td style="color: var(--text-secondary)">Aumento de perda de 20% sobre o mês anterior</td>
-                    <td style="text-align: right">
-                      <button type="button" class="btn btn-secondary btn-sm" onclick="showToast('Parâmetro atualizado.', 'info')">Ajustar</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><span class="cell-primary">Perdas Críticas</span></td>
-                    <td class="num font-semibold" style="color: var(--status-critico-text)">50%</td>
-                    <td style="color: var(--text-secondary)">Aumento de perda de 50% sobre o mês anterior</td>
-                    <td style="text-align: right">
-                      <button type="button" class="btn btn-secondary btn-sm" onclick="showToast('Parâmetro atualizado.', 'info')">Ajustar</button>
-                    </td>
-                  </tr>
+                <tbody id="tabelaUsuarios">
+                  <tr><td colspan="6" style="text-align: center; color: var(--text-muted)">Carregando usuários...</td></tr>
                 </tbody>
               </table>
             </div>
@@ -260,16 +47,14 @@
       </main>
     </div>
 
-    <!-- Modal Novo Usuário (Não aperta a tela principal) -->
     <div id="modalNovoUsuario" class="modal-backdrop">
       <div class="modal-box">
         <div class="modal-header">
-          <h3>Cadastrar Novo Usuário</h3>
-          <button type="button" class="modal-close-btn" data-modal-close>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-          </button>
+          <h3 id="tituloModalUsuario">Cadastrar Novo Usuário</h3>
+          <button type="button" class="modal-close-btn" style="font-size: 20px; line-height: 1" data-modal-close>&times;</button>
         </div>
-        <form onsubmit="event.preventDefault(); showToast('Usuário cadastrado com sucesso!', 'success'); document.getElementById('modalNovoUsuario').classList.remove('is-open');">
+        <form id="formUsuario">
+          <input type="hidden" id="uId" />
           <div class="modal-body">
             <div class="form-grid">
               <div class="form-group full-width">
@@ -278,28 +63,28 @@
               </div>
 
               <div class="form-group full-width">
-                <label for="uEmail">E-mail Corporativo</label>
+                <label for="uEmail">E-mail</label>
                 <input id="uEmail" type="email" class="input-control" required placeholder="nome@saborsul.com.br" />
               </div>
 
               <div class="form-group">
                 <label for="uPerfil">Perfil de Acesso</label>
                 <select id="uPerfil" class="select-control" required>
-                  <option>Administrador</option>
-                  <option>Produção</option>
-                  <option>Estoque</option>
-                  <option>Qualidade</option>
+                  <option value="administrador">Administrador</option>
+                  <option value="producao">Produção</option>
+                  <option value="estoque">Estoque</option>
+                  <option value="qualidade">Qualidade</option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label for="uCargo">Cargo na Fábrica</label>
-                <input id="uCargo" type="text" class="input-control" required placeholder="Ex: Supervisor" />
+                <label for="uCargo">Cargo</label>
+                <input id="uCargo" type="text" class="input-control" placeholder="Ex: Supervisor" />
               </div>
 
               <div class="form-group full-width">
-                <label for="uSenha">Senha Provisória</label>
-                <input id="uSenha" type="password" class="input-control" required placeholder="••••••••" />
+                <label for="uSenha">Senha (obrigatória no cadastro; opcional na edição)</label>
+                <input id="uSenha" type="password" class="input-control" placeholder="••••••" />
               </div>
             </div>
           </div>
@@ -313,24 +98,104 @@
 
     <script src="../assets/js/main.js"></script>
     <script>
-      function alternarAba(aba) {
-        const painelUsu = document.getElementById('painelUsuarios');
-        const painelPar = document.getElementById('painelParametros');
-        const btnUsu = document.getElementById('tabBtnUsuarios');
-        const btnPar = document.getElementById('tabBtnParametros');
+      let listaUsuarios = [];
 
-        if (aba === 'usuarios') {
-          painelUsu.style.display = 'block';
-          painelPar.style.display = 'none';
-          btnUsu.classList.add('active');
-          btnPar.classList.remove('active');
-        } else {
-          painelUsu.style.display = 'none';
-          painelPar.style.display = 'block';
-          btnPar.classList.add('active');
-          btnUsu.classList.remove('active');
+      async function carregarUsuarios() {
+        try {
+          listaUsuarios = await apiRequest('/usuarios');
+          document.getElementById('totalUsuariosBadge').innerText = `${listaUsuarios.length} usuário(s)`;
+
+          const nomesPerfis = { administrador: 'Administrador', producao: 'Produção', estoque: 'Estoque', qualidade: 'Qualidade' };
+          const badgesPerfis = { administrador: 'badge-petroleo', producao: 'badge-info', estoque: 'badge-atencao', qualidade: 'badge-critico' };
+
+          let html = '';
+          for (let i = 0; i < listaUsuarios.length; i++) {
+            const u = listaUsuarios[i];
+            const badgeStatus = u.status === 'Ativo' ? criarBadge('badge-normal', 'Ativo') : criarBadge('badge-critico', 'Inativo');
+            html += `
+              <tr style="${u.status === 'Inativo' ? 'opacity: 0.6' : ''}">
+                <td><span class="cell-primary">${u.nome}</span></td>
+                <td style="color: var(--text-secondary)">${u.email}</td>
+                <td>${criarBadge(badgesPerfis[u.perfil] || 'badge-info', nomesPerfis[u.perfil] || u.perfil, false)}</td>
+                <td>${u.cargo || '-'}</td>
+                <td>${badgeStatus}</td>
+                <td style="text-align: right; display: flex; gap: 6px; justify-content: flex-end">
+                  <button type="button" class="btn btn-secondary btn-sm" onclick="editarUsuario(${u.id_usuario})">Editar</button>
+                  <button type="button" class="btn btn-danger-outline btn-sm" onclick="alternarStatusUsuario(${u.id_usuario}, '${u.status}')">${u.status === 'Ativo' ? 'Inativar' : 'Ativar'}</button>
+                </td>
+              </tr>
+            `;
+          }
+          document.getElementById('tabelaUsuarios').innerHTML = html;
+        } catch (erro) {
+          showToast(erro.message, 'warning');
         }
       }
+
+      function editarUsuario(id) {
+        let usu = null;
+        for (let i = 0; i < listaUsuarios.length; i++) {
+          if (listaUsuarios[i].id_usuario === id) { usu = listaUsuarios[i]; break; }
+        }
+        if (!usu) return;
+        document.getElementById('tituloModalUsuario').innerText = 'Editar Usuário';
+        document.getElementById('uId').value = usu.id_usuario;
+        document.getElementById('uNome').value = usu.nome;
+        document.getElementById('uEmail').value = usu.email;
+        document.getElementById('uPerfil').value = usu.perfil;
+        document.getElementById('uCargo').value = usu.cargo || '';
+        document.getElementById('uSenha').value = '';
+        abrirModal('modalNovoUsuario');
+      }
+
+      async function alternarStatusUsuario(id, statusAtual) {
+        const novo = statusAtual === 'Ativo' ? 'Inativo' : 'Ativo';
+        if (!confirm(`Deseja ${novo === 'Inativo' ? 'inativar' : 'ativar'} este usuário?`)) return;
+        try {
+          await apiRequest(`/usuarios/${id}/status`, 'PUT', { status: novo });
+          showToast(`Usuário alterado para ${novo}.`, 'success');
+          carregarUsuarios();
+        } catch (erro) {
+          showToast(erro.message, 'warning');
+        }
+      }
+
+      document.getElementById('formUsuario').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const id = document.getElementById('uId').value;
+        const dados = {
+          nome: document.getElementById('uNome').value.trim(),
+          email: document.getElementById('uEmail').value.trim(),
+          perfil: document.getElementById('uPerfil').value,
+          cargo: document.getElementById('uCargo').value.trim(),
+          senha: document.getElementById('uSenha').value
+        };
+
+        try {
+          if (id) {
+            await apiRequest(`/usuarios/${id}`, 'PUT', dados);
+            showToast('Usuário atualizado com sucesso!', 'success');
+          } else {
+            await apiRequest('/usuarios', 'POST', dados);
+            showToast('Usuário cadastrado com sucesso!', 'success');
+          }
+          document.getElementById('formUsuario').reset();
+          document.getElementById('uId').value = '';
+          document.getElementById('tituloModalUsuario').innerText = 'Cadastrar Novo Usuário';
+          fecharModal('modalNovoUsuario');
+          carregarUsuarios();
+        } catch (erro) {
+          showToast(erro.message, 'warning');
+        }
+      });
+
+      document.querySelector('[data-modal-target="modalNovoUsuario"]')?.addEventListener('click', () => {
+        document.getElementById('formUsuario').reset();
+        document.getElementById('uId').value = '';
+        document.getElementById('tituloModalUsuario').innerText = 'Cadastrar Novo Usuário';
+      });
+
+      document.addEventListener('DOMContentLoaded', carregarUsuarios);
     </script>
   </body>
 </html>

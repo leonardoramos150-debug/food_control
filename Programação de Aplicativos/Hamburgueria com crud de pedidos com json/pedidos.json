@@ -1,0 +1,28 @@
+[
+  {
+    "cliente": "Maria",
+    "lanche": "X-Salada",
+    "id": "1792629027486"
+  },
+  {
+    "cliente": "Mario",
+    "lanche": "X-veiga",
+    "id": "1792630535388"
+  },
+  {
+    "cliente": "Mario",
+    "lanche": "X-veiga",
+    "id": "1792630540255"
+  },
+  {
+    "cliente": "mariana",
+    "lanche": "X-veiga",
+    "id": "1792630610530"
+  },
+  {
+    "cliente": "mariana",
+    "lanche": "X-veiga",
+    "id": "1792630667073",
+    "horario": "21/10/2026, 21:57:47"
+  }
+]

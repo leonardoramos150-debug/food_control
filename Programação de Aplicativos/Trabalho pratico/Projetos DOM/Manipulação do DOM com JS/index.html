@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo JS - Manipulação do DOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Exemplo 01 - Manipulação de texto usando o innerText</h1>
+    <p>O innerTExt é usado para manipulações de textos dentro de tags HTML, como por exemplo H1, H2, H3, P etc. Podemos utilizar para isso também o innerHTML.</p>
+    <p>O innerHTML permite criarmos códigos HTML dentro de tags já existentes, por exemplo, adicionar um botão dentro de uma div.</p>
+    <div class="exemplo" align="center">
+        <h1 id="txt-01">Olá, turma!</h1>
+        <button id="btn-01">Mudar Texto</button>
+    </div>
+
+    <h1>Exemplo 02 - Manipulação de classes usando classList</h1>
+    <p>O classList permite realizar a manipulação de classes, assim alterando estilos de elementos HTML, como por exemplo simulando um interruptor, deixando-o aceso ou apagado. Ou até mesmo mudar as cores ou efeitos em uma tag qualquer,</p>
+    <div class="exemplo" align="center">
+        <h1>Interruptor</h1>
+        <div class="interruptor-aceso" id="interruptor"></div>
+        <button id="btn-02">Ligar/Desligar</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

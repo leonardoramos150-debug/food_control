@@ -6,247 +6,40 @@
     <title>Estoque - FoodControl</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
-  <body>
+  <body data-grupo="Operação" data-pagina="Estoque">
     <div class="app-layout">
-      <!-- Sidebar com Logo Isolada -->
-      <aside class="app-sidebar" aria-label="Menu Principal">
-        <div class="sidebar-header">
-          <a href="dashboard.html" class="sidebar-brand-standalone" title="Página Inicial">
-            <img src="../assets/img/logo-side.png" alt="FoodControl" class="sidebar-logo-img logo-side" />
-          </a>
-        </div>
-
-        <nav class="sidebar-nav">
-          <div class="nav-section">
-            <span class="nav-section-title">Visão Geral</span>
-            <a href="dashboard.html" class="nav-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="9" rx="1"></rect><rect x="14" y="3" width="7" height="5" rx="1"></rect><rect x="14" y="12" width="7" height="9" rx="1"></rect><rect x="3" y="16" width="7" height="5" rx="1"></rect></svg>
-              <span>Dashboard</span>
-            </a>
-          </div>
-
-          <div class="nav-section">
-            <span class="nav-section-title">Operação</span>
-            <a href="produtos.html" class="nav-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-              <span>Produtos</span>
-            </a>
-            <a href="lotes.html" class="nav-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16.5 9.4 7.55 4.24a1.78 1.78 0 0 0-2.5 1.55v12.42a1.78 1.78 0 0 0 2.5 1.55L16.5 14.6a1.78 1.78 0 0 0 0-3.2z"></path><polyline points="18 4 18 20"></polyline></svg>
-              <span>Lotes & Validade</span>
-            </a>
-            <a href="producao.html" class="nav-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-              <span>Produção</span>
-            </a>
-            <a href="estoque.html" class="nav-link active" aria-current="page">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-              <span>Estoque</span>
-            </a>
-          </div>
-
-          <div class="nav-section">
-            <span class="nav-section-title">Comercial</span>
-            <a href="pedidos.html" class="nav-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-              <span>Pedidos</span>
-            </a>
-          </div>
-
-          <div class="nav-section">
-            <span class="nav-section-title">Qualidade</span>
-            <a href="perdas.html" class="nav-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg>
-              <span>Perdas</span>
-            </a>
-            <a href="alertas.html" class="nav-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-              <span>Alertas</span>
-              <span class="nav-pill">5</span>
-            </a>
-          </div>
-
-          <div class="nav-section">
-            <span class="nav-section-title">Administração</span>
-            <a href="relatorios.html" class="nav-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-              <span>Relatórios</span>
-            </a>
-            <a href="usuarios.html" class="nav-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-              <span>Usuários & Acessos</span>
-            </a>
-          </div>
-        </nav>
-
-        <div class="sidebar-footer">
-          <span class="company-name">SaborSul Alimentos</span>
-          <a href="../index.html" class="sidebar-logout" title="Sair do sistema">Sair</a>
-        </div>
-      </aside>
-
-      <!-- Área de Conteúdo Principal -->
       <main class="app-main">
-        <header class="app-header">
-          <div class="header-breadcrumbs">
-            <a href="dashboard.html">Início</a>
-            <span class="separator">/</span>
-            <span>Operação</span>
-            <span class="separator">/</span>
-            <span class="current">Estoque</span>
-          </div>
-
-          <div class="header-right">
-            <div class="operational-date-chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-              <span>30/09/2026</span>
-            </div>
-
-            <a href="alertas.html" class="header-notification-btn" title="Central de Alertas">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-              <span class="notification-count">5</span>
-            </a>
-
-            <div class="user-profile">
-              <div class="user-avatar">CS</div>
-              <div class="user-details">
-                <span class="user-name">Carlos Silva</span>
-                <span class="user-role">Estoque</span>
-              </div>
-            </div>
-          </div>
-        </header>
-
         <div class="page-container">
           <div class="page-header">
             <div class="page-title-group">
               <h1>Controle de Estoque</h1>
-              <p>Saldos consolidados por produto e histórico de movimentações.</p>
+              <p>Histórico de entradas, saídas, perdas e ajustes nos lotes.</p>
             </div>
             <div class="page-actions">
-              <a href="producao.html" class="btn btn-primary">Registrar Entrada</a>
+              <button type="button" class="btn btn-primary" data-modal-target="modalMovimentacao">+ Nova Movimentação</button>
             </div>
           </div>
 
-          <!-- Abas para separar Visão de Saldos do Histórico -->
-          <div class="segmented-tabs">
-            <button type="button" class="tab-btn active" id="tabBtnSaldo" onclick="alternarEstoque('saldo')">Saldo por Produto (6)</button>
-            <button type="button" class="tab-btn" id="tabBtnKardex" onclick="alternarEstoque('kardex')">Histórico de Movimentações</button>
-          </div>
-
-          <!-- Aba 1: Saldo Consolidado -->
-          <section id="painelSaldo" class="card-panel">
-            <div class="table-responsive">
-              <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>Produto</th>
-                    <th class="num">Disponível</th>
-                    <th class="num">Vencido (Retido)</th>
-                    <th class="num">Mínimo</th>
-                    <th>Situação</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><span class="cell-primary">Lasanha Bolonhesa</span></td>
-                    <td class="num font-semibold">1.000 un</td>
-                    <td class="num" style="color: var(--text-muted)">0 un</td>
-                    <td class="num">100 un</td>
-                    <td><span class="badge badge-normal"><span class="badge-dot"></span>Normal</span></td>
-                  </tr>
-
-                  <tr>
-                    <td><span class="cell-primary">Pizza Calabresa</span></td>
-                    <td class="num font-semibold">100 un</td>
-                    <td class="num" style="color: var(--text-muted)">0 un</td>
-                    <td class="num">100 un</td>
-                    <td><span class="badge badge-normal"><span class="badge-dot"></span>Normal</span></td>
-                  </tr>
-
-                  <tr>
-                    <td><span class="cell-primary">Coxinha de Frango</span></td>
-                    <td class="num font-semibold">900 un</td>
-                    <td class="num" style="color: var(--text-muted)">0 un</td>
-                    <td class="num">300 un</td>
-                    <td><span class="badge badge-normal"><span class="badge-dot"></span>Normal</span></td>
-                  </tr>
-
-                  <tr>
-                    <td><span class="cell-primary">Pastel de Carne</span></td>
-                    <td class="num font-semibold">500 un</td>
-                    <td class="num font-semibold" style="color: var(--status-critico-text)">60 un</td>
-                    <td class="num">200 un</td>
-                    <td><span class="badge badge-atencao"><span class="badge-dot"></span>60 un a descartar</span></td>
-                  </tr>
-
-                  <tr>
-                    <td><span class="cell-primary">Strogonoff de Frango</span></td>
-                    <td class="num font-semibold" style="color: var(--status-critico-text)">40 un</td>
-                    <td class="num" style="color: var(--text-muted)">0 un</td>
-                    <td class="num">60 un</td>
-                    <td><span class="badge badge-atencao"><span class="badge-dot"></span>Abaixo do Mínimo</span></td>
-                  </tr>
-
-                  <tr>
-                    <td><span class="cell-primary">Massa Tagliatelle</span></td>
-                    <td class="num font-semibold">150 un</td>
-                    <td class="num" style="color: var(--text-muted)">0 un</td>
-                    <td class="num">80 un</td>
-                    <td><span class="badge badge-normal"><span class="badge-dot"></span>Normal</span></td>
-                  </tr>
-                </tbody>
-              </table>
+          <section class="card-panel">
+            <div class="panel-header">
+              <div class="panel-title"><h2>Histórico de Movimentações</h2></div>
+              <span id="totalMovBadge" class="panel-badge">0 registros</span>
             </div>
-          </section>
-
-          <!-- Aba 2: Histórico de Movimentações -->
-          <section id="painelKardex" class="card-panel" style="display: none">
             <div class="table-responsive">
               <table class="data-table">
                 <thead>
                   <tr>
                     <th>Data</th>
                     <th>Lote</th>
+                    <th>Produto</th>
                     <th>Tipo</th>
                     <th class="num">Quantidade</th>
                     <th>Responsável</th>
                     <th>Motivo</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>28/09/2026</td>
-                    <td><span style="font-family: monospace">LOT-2026-043</span></td>
-                    <td><span class="badge badge-critico">Perda</span></td>
-                    <td class="num font-semibold" style="color: var(--status-critico-text)">-20 un</td>
-                    <td>Carlos Silva</td>
-                    <td>Armazenamento inadequado</td>
-                  </tr>
-                  <tr>
-                    <td>25/09/2026</td>
-                    <td><span style="font-family: monospace">LOT-2026-043</span></td>
-                    <td><span class="badge badge-normal">Entrada</span></td>
-                    <td class="num font-semibold" style="color: #059669">+600 un</td>
-                    <td>Rafael Becker</td>
-                    <td>Produção Manhã</td>
-                  </tr>
-                  <tr>
-                    <td>22/09/2026</td>
-                    <td><span style="font-family: monospace">LOT-2026-042</span></td>
-                    <td><span class="badge badge-normal">Entrada</span></td>
-                    <td class="num font-semibold" style="color: #059669">+1.200 un</td>
-                    <td>Rafael Becker</td>
-                    <td>Produção Manhã</td>
-                  </tr>
-                  <tr>
-                    <td>20/09/2026</td>
-                    <td><span style="font-family: monospace">LOT-2026-041</span></td>
-                    <td><span class="badge badge-info">Saída</span></td>
-                    <td class="num font-semibold" style="color: var(--status-info-text)">-175 un</td>
-                    <td>Paula Reis</td>
-                    <td>Expedição de Pedido</td>
-                  </tr>
+                <tbody id="tabelaMovEstoque">
+                  <tr><td colspan="7" style="text-align: center; color: var(--text-muted)">Carregando...</td></tr>
                 </tbody>
               </table>
             </div>
@@ -255,26 +48,108 @@
       </main>
     </div>
 
+    <div id="modalMovimentacao" class="modal-backdrop">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3>Registrar Movimentação</h3>
+          <button type="button" class="modal-close-btn" style="font-size: 20px; line-height: 1" data-modal-close>&times;</button>
+        </div>
+        <form id="formMovimentacao">
+          <div class="modal-body">
+            <div class="form-grid">
+              <div class="form-group full-width">
+                <label for="movLote">Lote</label>
+                <select id="movLote" class="select-control" required></select>
+              </div>
+              <div class="form-group">
+                <label for="movTipo">Tipo</label>
+                <select id="movTipo" class="select-control" required>
+                  <option value="Saida">Saída</option>
+                  <option value="Entrada">Entrada</option>
+                  <option value="Ajuste">Ajuste</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="movQtd">Quantidade</label>
+                <input id="movQtd" type="number" class="input-control" required placeholder="Ex: 20" />
+              </div>
+              <div class="form-group full-width">
+                <label for="movObs">Observação / Motivo</label>
+                <input id="movObs" type="text" class="input-control" placeholder="Ex: Conferência de inventário" />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-modal-close>Cancelar</button>
+            <button type="submit" class="btn btn-primary">Confirmar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <script src="../assets/js/main.js"></script>
     <script>
-      function alternarEstoque(aba) {
-        const pSaldo = document.getElementById('painelSaldo');
-        const pKardex = document.getElementById('painelKardex');
-        const bSaldo = document.getElementById('tabBtnSaldo');
-        const bKardex = document.getElementById('tabBtnKardex');
+      async function carregarEstoque() {
+        try {
+          const [movs, lotes] = await Promise.all([
+            apiRequest('/estoque/movimentacoes'),
+            apiRequest('/lotes')
+          ]);
 
-        if (aba === 'saldo') {
-          pSaldo.style.display = 'block';
-          pKardex.style.display = 'none';
-          bSaldo.classList.add('active');
-          bKardex.classList.remove('active');
-        } else {
-          pSaldo.style.display = 'none';
-          pKardex.style.display = 'block';
-          bKardex.classList.add('active');
-          bSaldo.classList.remove('active');
+          document.getElementById('totalMovBadge').innerText = `${movs.length} registro(s)`;
+
+          let htmlMov = '';
+          for (let i = 0; i < movs.length; i++) {
+            const m = movs[i];
+            const badgeTipo = m.tipo === 'Entrada' ? 'badge-normal' : (m.tipo === 'Saida' ? 'badge-info' : (m.tipo === 'Perda' ? 'badge-critico' : 'badge-atencao'));
+            const qtdTexto = m.quantidade > 0 ? `+${formatarNumero(m.quantidade)} un` : `${formatarNumero(m.quantidade)} un`;
+            const corQtd = m.quantidade > 0 ? 'color: #059669' : 'color: var(--status-critico-text)';
+            htmlMov += `
+              <tr>
+                <td>${formatarDataBR(m.data_hora)}</td>
+                <td><span style="font-family: monospace">${m.numero_lote}</span></td>
+                <td>${m.produto_nome}</td>
+                <td>${criarBadge(badgeTipo, m.tipo, false)}</td>
+                <td class="num font-semibold" style="${corQtd}">${qtdTexto}</td>
+                <td>${m.responsavel}</td>
+                <td>${m.observacao || '-'}</td>
+              </tr>
+            `;
+          }
+          document.getElementById('tabelaMovEstoque').innerHTML = htmlMov || '<tr><td colspan="7">Nenhuma movimentação registrada.</td></tr>';
+
+          let optsLotes = '';
+          for (let i = 0; i < lotes.length; i++) {
+            const lt = lotes[i];
+            optsLotes += `<option value="${lt.id_lote}">${lt.numero_lote} - ${lt.produto_nome} (Saldo: ${lt.quantidade_atual} un | ${lt.status})</option>`;
+          }
+          document.getElementById('movLote').innerHTML = optsLotes;
+        } catch (erro) {
+          showToast(erro.message, 'warning');
         }
       }
+
+      document.getElementById('formMovimentacao').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const usuario = obterUsuarioLogado();
+        try {
+          await apiRequest('/estoque/movimentacoes', 'POST', {
+            id_lote: parseInt(document.getElementById('movLote').value, 10),
+            tipo: document.getElementById('movTipo').value,
+            quantidade: parseInt(document.getElementById('movQtd').value, 10),
+            id_usuario: usuario ? usuario.id_usuario : 3,
+            observacao: document.getElementById('movObs').value.trim()
+          });
+          showToast('Movimentação registrada com sucesso!', 'success');
+          document.getElementById('formMovimentacao').reset();
+          fecharModal('modalMovimentacao');
+          carregarEstoque();
+        } catch (erro) {
+          showToast(erro.message, 'warning');
+        }
+      });
+
+      document.addEventListener('DOMContentLoaded', carregarEstoque);
     </script>
   </body>
 </html>
